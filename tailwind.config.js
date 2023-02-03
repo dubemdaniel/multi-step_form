@@ -18,7 +18,8 @@ module.exports = {
          White: "hsl(0, 0%, 100%)",
       },
       backgroundImage:{
-        desktopImg:"url(/assets/images/bg-sidebar-desktop.svg)"
+        desktopImg:"url(/assets/images/bg-sidebar-desktop.svg)",
+        mobileImg:"url(/assets/images/bg-sidebar-mobile.svg);"
       }
     },
   },
