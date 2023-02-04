@@ -617,6 +617,14 @@ video {
   justify-content: space-between;
 }
 
+.gap-6 {
+  gap: 1.5rem;
+}
+
+.overflow-hidden {
+  overflow: hidden;
+}
+
 .rounded-full {
   border-radius: 9999px;
 }
@@ -788,6 +796,10 @@ video {
     grid-column: span 2 / span 2;
   }
 
+  .md\:col-span-1 {
+    grid-column: span 1 / span 1;
+  }
+
   .md\:col-start-1 {
     grid-column-start: 1;
   }
@@ -798,6 +810,14 @@ video {
 
   .md\:row-span-1 {
     grid-row: span 1 / span 1;
+  }
+
+  .md\:row-span-2 {
+    grid-row: span 2 / span 2;
+  }
+
+  .md\:row-span-3 {
+    grid-row: span 3 / span 3;
   }
 
   .md\:row-start-1 {
@@ -814,6 +834,29 @@ video {
 
   .md\:row-start-4 {
     grid-row-start: 4;
+  }
+
+  .md\:m-0 {
+    margin: 0px;
+  }
+
+  .md\:m-auto {
+    margin: auto;
+  }
+
+  .md\:mx-1 {
+    margin-left: 0.25rem;
+    margin-right: 0.25rem;
+  }
+
+  .md\:mx-4 {
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+
+  .md\:mx-auto {
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .md\:-mb-8 {
@@ -840,8 +883,16 @@ video {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
+  .md\:grid-cols-4 {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
   .md\:grid-rows-4 {
     grid-template-rows: repeat(4, minmax(0, 1fr));
+  }
+
+  .md\:gap-6 {
+    gap: 1.5rem;
   }
 
   .md\:rounded-lg {
@@ -865,6 +916,10 @@ video {
     padding: 1.5rem;
   }
 
+  .md\:p-0 {
+    padding: 0px;
+  }
+
   .md\:py-16 {
     padding-top: 4rem;
     padding-bottom: 4rem;
@@ -873,6 +928,16 @@ video {
   .md\:py-2 {
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
+  }
+
+  .md\:px-4 {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .md\:px-1 {
+    padding-left: 0.25rem;
+    padding-right: 0.25rem;
   }
 
   .md\:shadow-lg {
