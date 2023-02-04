@@ -20,7 +20,10 @@ module.exports = {
       backgroundImage:{
         desktopImg:"url(/assets/images/bg-sidebar-desktop.svg)",
         mobileImg:"url(/assets/images/bg-sidebar-mobile.svg);"
-      }
+      },
+      fontFamily: {
+        myFont: ['Montserrat' , 'sans-serif']
+      },
     },
   },
   plugins: [
