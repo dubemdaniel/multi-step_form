@@ -24,6 +24,12 @@ module.exports = {
       fontFamily: {
         myFont: ['Montserrat' , 'sans-serif']
       },
+      image:{
+        advanced:"url(/assets/images/icon-advanced.svg)",
+        arcade:"url(/assets/images/icon-arcade.svg)",
+        pro:"url(/assets/images/icon-pro.svg)",
+        
+      }
     },
   },
   plugins: [
