@@ -28,7 +28,8 @@ module.exports = {
         advanced:"url(/assets/images/icon-advanced.svg)",
         arcade:"url(/assets/images/icon-arcade.svg)",
         pro:"url(/assets/images/icon-pro.svg)",
-        
+        thanks:"url(/assets/images/icon-thank-you.svg)",
+        advanced:"url(/assets/images/icon-advanced.svg)",
       }
     },
   },
