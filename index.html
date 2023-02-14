@@ -7,7 +7,7 @@
     <title>Multi-Step-Form</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="layouts/css/styles.css">
 </head>
 <body class="box-content font-semibold bg-Magnolia md:py-16 font-myFont" >
@@ -44,7 +44,7 @@
         </div>
       </div>
     </nav>
-    <div id="personalInfo" class="absolute bottom-0 left-0 right-0 w-11/12 px-4 py-6 mx-auto bg-white rounded-lg shadow-lg top-32 h-fit md:col-start-2 md:col-span-2 md:top-0 md:bg-transparent md:shadow-none md:relative md:grid">
+    <div id="overall" class="absolute bottom-0 left-0 right-0 w-11/12 px-4 py-6 mx-auto bg-white rounded-lg shadow-lg top-32 h-fit md:col-start-2 md:col-span-2 md:top-0 md:bg-transparent md:shadow-none md:relative md:grid">
       <!-- my info starts here -->
      <div class=" mb-[8rem] hidden">
         <h2 class="mt-4 text-4xl font-bold text-MarineBlue">Personal info</h2>
@@ -66,21 +66,56 @@
 
      <!-- select plan slide starts here -->
      <div class=" mb-[8rem] ">
-      <h2 class="mt-4 text-3xl font-extrabold text-MarineBlue">Select your plan</h2>
-      <p class="mt-4 mb-4 text-base text-slate-500 md:text-xl">You have the option of monthly or yearly billing</p>
-      <label for="arcade" class="block">
-        <div class="grid grid-cols-4 p-4 border rounded-lg text-MarineBlue">
+      <h2 class="mt-4 text-[1.7rem] font-extrabold text-MarineBlue">Select your plan</h2>
+      <p class="mt-4 mb-4 text-sm text-slate-500 md:text-xl">You have the option of monthly or yearly billing</p>
+      <label for="arcade" class="block mt-3" id="label">
+        <div class="grid grid-cols-4 p-3 border-2 rounded-lg text-MarineBlue focus:outline-MarineBlue border-slate-300">
           <input type="checkbox" id="arcade" class="hidden">
-          <img src="/assets/images/icon-arcade.svg" alt="arcade icon" class="w-20 my-auto">
+          <img src="/assets/images/icon-arcade.svg" alt="arcade icon" class="w-12 my-auto">
           <div class="col-span-3">
-            <h4 class="text-lg font-extrabold">Arcade</h4>
-            <p id="arcadePrice" class="my-[.2rem] text-slate-500 tracking-normal">$9/mo</p>
+            <h4 class="text-base md:text-lg md:font-bold ">Arcade</h4>
+            <p id="arcadePrice" class="my-[.2rem] text-slate-500 tracking-normal text-sm md:text-base">$9/mo</p>
             <h5 class="hidden text-xs font-bold">2 months free</h5>
           </div>
         </div>
       </label>
+      <label for="advanced" class="block mt-3" id="label">
+        <div class="grid grid-cols-4 p-3 border-2 rounded-lg text-MarineBlue focus:outline-MarineBlue border-slate-300">
+          <input type="checkbox" id="advanced" class="hidden">
+          <img src="/assets/images/icon-advanced.svg" alt="advanced icon" class="w-12 my-auto">
+          <div class="col-span-3">
+            <h4 class="text-base md:text-lg md:font-bold">Advanced</h4>
+            <p id="advancedPrice" class="my-[.2rem] text-slate-500 tracking-normal text-sm md:text-base">$12/mo</p>
+            <h5 class="hidden text-xs font-bold">2 months free</h5>
+          </div>
+        </div>
+      </label>
+      <label for="pro" class="block mt-3" id="label">
+        <div class="grid grid-cols-4 p-3 border-2 rounded-lg text-MarineBlue focus:outline-MarineBlue border-slate-300">
+          <input type="checkbox" id="pro" class="hidden">
+          <img src="/assets/images/icon-pro.svg" alt="pro icon" class="w-12 my-auto">
+          <div class="col-span-3">
+            <h4 class="text-base md:text-lg md:font-bold">Pro</h4>
+            <p id="arcadePrice" class="my-[.2rem] text-slate-500 tracking-normal text-sm md:text-base">$15/mo</p>
+            <h5 class="hidden text-xs font-bold">2 months free</h5>
+          </div>
+        </div>
+      </label>
+      <!-- toggle switch for monthly and yearly payment starts here -->
+       <label for="monthYear" class="flex items-center justify-between px-8 py-4 mt-6 rounded-lg bg-Alabaster">
+        <h4 class="font-black text-MarineBlue">Monthly</h4>
+          <div class="relative inline-block w-[52px] h-[28px] md:w-[60] md:h-[34]">
+            <input type="checkbox" class="hidden toggle-switch-checkbox peer" id="monthYear">
+            <span class="absolute top-0 bottom-0 left-0 right-0 bg-slate-200 rounded-[34px] before:absolute before:cursor-pointer before:content before:h-[20px] before:w-[40%] before:left-1 before:bottom-1 before:bg-white before:rounded-full peer peer-checked:before:translate-x-[24px] transition-all peer-checked:bg-MarineBlue duration-500 before:duration-500 md:before:h-[26px] md:before:w-[26px]" ></span>
+          </div>
+        <h4 class="font-black text-slate-400">Yearly</h4>
+       </label>
+      <!-- toggle switch for monthly and yearly payment ends here -->
    </div >
      <!-- select plan slide ends here -->
+     
+
+
      
      <!-- footer for all slide starts here and is same for all slide -->
      <footer class="fixed inset-x-0 bottom-0 flex justify-between px-4 py-3 align-middle bg-white md:relative md:bottom-0 md:-mb-8 md:py-2 md:mt-16 shadow-myShadow md:shadow-none"  >
