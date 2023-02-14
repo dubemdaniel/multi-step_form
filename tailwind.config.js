@@ -30,6 +30,9 @@ module.exports = {
         pro:"url(/assets/images/icon-pro.svg)",
         thanks:"url(/assets/images/icon-thank-you.svg)",
         advanced:"url(/assets/images/icon-advanced.svg)",
+      },
+      boxShadow:{
+        myShadow:"-1px -1px 10px hsla(213, 96%, 18%, 0.2)"
       }
     },
   },
