@@ -68,10 +68,10 @@
      <div class=" mb-[6rem] ">
       <h2 class="mt-4 text-[1.7rem] font-extrabold text-MarineBlue">Select your plan</h2>
       <p class="mt-4 mb-4 text-sm text-slate-500 md:text-xl">You have the option of monthly or yearly billing</p>
-      <div class="md:flex md:gap-4">
+      <form class="block md:flex md:gap-4 ">
         <label for="arcade" class="block mt-3 md:w-full" id="label">
-          <div class="grid grid-cols-4 p-3 border-2 rounded-lg text-MarineBlue focus:outline-MarineBlue border-slate-300 md:flex-col md:justify-center md:flex md:items-start ">
-            <input type="checkbox" id="arcade" class="hidden">
+          <input type="radio" id="arcade" class="hidden peer">
+          <div class="grid grid-cols-4 p-3 border-2 rounded-lg text-MarineBlue focus:outline-MarineBlue border-slate-300 md:flex-col md:justify-center md:flex md:items-start peer-checked:border-MarineBlue ">
             <img src="/assets/images/icon-arcade.svg" alt="arcade icon" class="w-12 my-auto">
             <div class="col-span-3 md:mt-8">
               <h4 class="text-base md:text-lg md:font-bold ">Arcade</h4>
@@ -81,15 +81,15 @@
           </div>
         </label>
         <label for="advanced" class="block mt-3 md:w-full" id="label">
-          <div class="grid grid-cols-4 p-3 border-2 rounded-lg text-MarineBlue focus:outline-MarineBlue border-slate-300 md:flex-col md:justify-center md:items-start md:flex ">
-            <input type="checkbox" id="advanced" class="hidden">
-            <img src="/assets/images/icon-advanced.svg" alt="advanced icon" class="w-12 my-auto">
-            <div class="col-span-3 md:mt-8">
-              <h4 class="text-base md:text-lg md:font-bold">Advanced</h4>
-              <p id="advancedPrice" class="my-[.2rem] text-slate-500 tracking-normal text-sm md:text-base">$12/mo</p>
-              <h5 class="hidden text-xs font-bold">2 months free</h5>
+          <input type="radio" id="advanced" class="hidden peer">
+            <div class="grid grid-cols-4 p-3 border-2 rounded-lg text-MarineBlue focus:outline-MarineBlue border-slate-300 md:flex-col md:justify-center md:items-start md:flex ">
+              <img src="/assets/images/icon-advanced.svg" alt="advanced icon" class="w-12 my-auto">
+              <div class="col-span-3 md:mt-8 ">
+                <h4 class="text-base md:text-lg md:font-bold">Advanced</h4>
+                <p id="advancedPrice" class="my-[.2rem] text-slate-500 tracking-normal text-sm md:text-base">$12/mo</p>
+                <h5 class="hidden text-xs font-bold">2 months free</h5>
+              </div>
             </div>
-          </div>
         </label>
         <label for="pro" class="block mt-3 md:w-full" id="label">
           <div class="grid grid-cols-4 p-3 border-2 rounded-lg text-MarineBlue focus:outline-MarineBlue border-slate-300 md:flex-col md:justify-center md:items-start md:flex">
@@ -102,7 +102,7 @@
             </div>
           </div>
         </label>
-      </div>
+      </form>
       <!-- toggle switch for monthly and yearly payment starts here -->
        <label for="monthYear" class="flex items-center justify-between px-8 py-4 mt-6 rounded-lg bg-Alabaster">
         <h4 class="font-black text-MarineBlue">Monthly</h4>
