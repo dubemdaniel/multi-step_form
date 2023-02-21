@@ -47,8 +47,8 @@
     </nav>
     <div id="overall" class="absolute bottom-0 left-0 right-0 w-11/12 px-4 py-6 mx-auto bg-white rounded-lg shadow-lg top-32 h-fit md:col-start-2 md:col-span-2 md:top-0 md:bg-transparent md:shadow-none md:relative md:grid ">
       <!-- my info starts here -->
-     <div class=" mb-[8rem] hidden">
-        <h2 class="mt-4 text-4xl font-bold text-MarineBlue">Personal info</h2>
+     <div class=" mb-[8rem] hidden" id="info_wrapper"> 
+        <h2 class="mt-4 text-3xl font-bold text-MarineBlue md:text-4xl">Personal info</h2>
         <p class="mt-4 mb-4 text-base text-slate-500 md:text-xl">Please provide your name, email, address, and phone number...</p>
       <div class="mt-6 ">
         <label for="name" class="block text-MarineBlue"> Name </label>
@@ -66,7 +66,7 @@
      <!-- personal info ends here -->
 
      <!-- select plan slide starts here -->
-     <div class=" mb-[6rem] ">
+     <div class=" mb-[6rem] hidden" id="plan_wrapper">
       <h2 class="mt-4 text-[1.7rem] font-extrabold text-MarineBlue">Select your plan</h2>
       <p class="mt-4 mb-4 text-sm text-slate-500 md:text-xl">You have the option of monthly or yearly billing</p>
       <form class="block md:flex md:gap-4 ">
@@ -117,7 +117,21 @@
    </div >
 
      <!-- select plan slide ends here -->
-  
+   <div class=" mb-[8rem] ">
+          <h2 class="mt-4 text-3xl font-bold text-MarineBlue md:text-4xl">Personal info</h2>
+          <p class="mt-4 mb-4 text-base text-slate-500 md:text-xl">Please provide your name, email, address, and phone number...</p>
+          <label for="pick">
+              <div>
+                <input type="checkbox" id="addOns_wrapper">
+                <div>
+                  <h4 class="text-MarineBlue">Online service</h4>
+                  <p class="text-sm font-medium text-slate-400">Access to multiplayer games</p>
+                </div>
+                <p id="addOns-price_1"></p>
+              </div>
+          </label>
+        
+   </div >
      
      <!-- footer for all slide starts here and is same for all slide -->
      <footer class="fixed inset-x-0 bottom-0 flex justify-between px-4 py-3 align-middle bg-white md:relative md:bottom-0 md:-mb-8 md:py-2 md:mt-16 shadow-myShadow md:shadow-none"  >
