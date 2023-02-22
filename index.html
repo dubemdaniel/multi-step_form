@@ -117,21 +117,28 @@
    </div >
 
      <!-- select plan slide ends here -->
+
+     <!-- add-ons slide starts here -->
    <div class=" mb-[8rem] ">
           <h2 class="mt-4 text-3xl font-bold text-MarineBlue md:text-4xl">Personal info</h2>
           <p class="mt-3 mb-4 text-sm text-slate-500 md:text-xl">Please provide your name, email, address, and phone number...</p>
-          <label for="pick" class="block">
-            <div class="flex items-center justify-center p-3 align-middle border-2 rounded-lg gap-x-3">
-              <div class="flex gap-x-4">
-                <input type="checkbox" id="pick" class="peer">
-                <div>
-                  <h4 class="text-MarineBlue">Online service</h4>
-                  <p class="text-sm font-medium text-slate-400">Access to multiplayer games</p>
+          <form action="#">
+            <label for="pick" class="block peer">
+              <!-- <label for="pick"> -->
+                <!-- <input type="checkbox" class="peer" id="pick" name="pick_check"> -->
+                <div class="flex items-center justify-center p-3 align-middle border-2 rounded-lg gap-x-3 peer-checked:border-MarineBlue peer-focus:border-MarineBlue">
+                  <div class="flex gap-x-4">
+                    <input type="checkbox"  class="peer-checked:checked peer" >
+                    <div class="">
+                      <h4 class="text-MarineBlue">Online service</h4>
+                      <p class="text-sm font-medium text-slate-400">Access to multiplayer games</p>
+                    </div>
+                  </div>
+                  <p id="addOns-price_1" class="text-sm text-indigo-400"> +$1/mo</p>
                 </div>
-              </div>
-              <p id="addOns-price_1" class="text-sm text-indigo-400"> +$1/mo</p>
-            </div>
-          </label>
+              <!-- </label> -->
+            </label>
+        </form>
         
    </div >
      
