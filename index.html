@@ -120,21 +120,51 @@
 
      <!-- add-ons slide starts here -->
    <div class=" mb-[8rem] ">
-          <h2 class="mt-4 text-3xl font-bold text-MarineBlue md:text-4xl">Personal info</h2>
-          <p class="mt-3 mb-4 text-sm text-slate-500 md:text-xl">Please provide your name, email, address, and phone number...</p>
+          <h2 class="mt-4 text-3xl font-bold text-MarineBlue md:text-4xl">Pick add-ons</h2>
+          <p class="mt-3 mb-4 text-sm text-slate-400 md:text-xl">Add-ons help enhance your gaming experience.</p>
           <form action="#">
-            <label for="pick" class="block peer">
+            <label for="service_inp" class="block mb-3" id="service_label">
               <!-- <label for="pick"> -->
                 <!-- <input type="checkbox" class="peer" id="pick" name="pick_check"> -->
-                <div class="flex items-center justify-center p-3 align-middle border-2 rounded-lg gap-x-3 peer-checked:border-MarineBlue peer-focus:border-MarineBlue">
+                <div class="flex items-center justify-between px-3 py-1 align-middle border-2 rounded-lg gap-x-3 peer-checked:border-MarineBlue focus:border-MarineBlue md:flex md:px-4 md:py-2 ">
                   <div class="flex gap-x-4">
-                    <input type="checkbox"  class="peer-checked:checked peer" >
+                    <input type="checkbox"  class="peer-checked:checked" id="service_inp">
                     <div class="">
-                      <h4 class="text-MarineBlue">Online service</h4>
-                      <p class="text-sm font-medium text-slate-400">Access to multiplayer games</p>
+                      <h4 class="text-MarineBlue md:text-xl">Online service</h4>
+                      <p class="text-sm font-medium text-slate-400 md:text-lg">Access to multiplayer games</p>
                     </div>
                   </div>
                   <p id="addOns-price_1" class="text-sm text-indigo-400"> +$1/mo</p>
+                </div>
+              <!-- </label> -->
+            </label>
+            <label for="storage_inp" class="block mb-3" id="storage_label">
+              <!-- <label for="pick"> -->
+                <!-- <input type="checkbox" class="peer" id="pick" name="pick_check"> -->
+                <div class="flex items-center justify-between px-3 py-1 align-middle border-2 rounded-lg gap-x-3 peer-checked:border-MarineBlue focus:border-MarineBlue md:flex md:px-4 md:py-2 ">
+                  <div class="flex gap-x-4">
+                    <input type="checkbox"  class="peer-checked:checked" id="storage_inp">
+                    <div class="">
+                      <h4 class="text-MarineBlue md:text-xl">Larger storage</h4>
+                      <p class="text-sm font-medium text-slate-400 md:text-lg">Extra 1TB of cloud save</p>
+                    </div>
+                  </div>
+                  <p id="addOns-price_1" class="text-sm text-indigo-400"> +$2/mo</p>
+                </div>
+              <!-- </label> -->
+            </label>
+              <label for="customizable_inp" class="block" id="customizable_label">
+              <!-- <label for="pick"> -->
+                <!-- <input type="checkbox" class="peer" id="pick" name="pick_check"> -->
+                <div class="flex items-center justify-between px-3 py-1 align-middle border-2 rounded-lg gap-x-3 peer-checked:border-MarineBlue focus:border-MarineBlue md:flex md:px-4 md:py-2 ">
+                  <div class="flex gap-x-4">
+                    <input type="checkbox"  class=" peer-checked:checked" id="customizable_inp">
+                    <div class="">
+                      <h4 class="text-base text-MarineBlue md:text-xl">Customizable profile</h4>
+                      <p class="text-sm font-medium text-slate-400 md:text-lg">Custome theme on your profile</p>
+                    </div>
+                  </div>
+                  <p id="addOns-price_1" class="text-sm text-indigo-400"> +$2/mo</p>
                 </div>
               <!-- </label> -->
             </label>
@@ -144,8 +174,8 @@
      
      <!-- footer for all slide starts here and is same for all slide -->
      <footer class="fixed inset-x-0 bottom-0 flex justify-between px-4 py-3 align-middle bg-white md:relative md:bottom-0 md:-mb-8 md:py-2 md:mt-16 shadow-myShadow md:shadow-none"  >
-      <a href="#" class="px-4 py-2 text-xl font-base text-slate-500">Go Back</a>
-      <a href="#" class="px-4 py-2 mr-2 text-xl font-medium text-white rounded-md text bg-MarineBlue"> Next Step </a>
+      <a href="#" class="px-3 py-2 text-md text-slate-500 md:px-4 md:py-2 md:text-xl ">Go Back</a>
+      <a href="#" class="px-3 py-2 mr-2 font-medium text-white rounded-md text-md bg-MarineBlue md:px-4 md:py-2 md:text-xl"> Next Step </a>
     </footer>
      <!-- select plan slide starts here -->
      
