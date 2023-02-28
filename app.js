@@ -8,7 +8,7 @@ next.addEventListener('click', () => {
     if(current < 4 ){
         wrapper[current].classList.add('hidden');
         wrapper[current + 1].classList.remove('hidden')
-     
+        prev()
         current++
         stpCircle++
             if(current===3){
@@ -17,22 +17,27 @@ next.addEventListener('click', () => {
                 `
             }else if(current===4){
             next.classList.add('hidden')
-        }
+            
+            }
+            
     }if(stpCircle < 4){
-        stp[stpCircle ].className = 'flex items-center justify-center w-10 h-10 border-2 rounded-full md:m-auto md:w-12 md:h-12 bg-Magnolia text-MarineBlue'
+        stp[stpCircle ].className.add('bg-Magnolia text-MarineBlue')
     }
 })
 
-// back.addEventListener('click', () => {
-//     if(current === 1){
-        
-//         back.classList.remove('invisible')
-
-//     }
-    
-// })
+// 'flex items-center justify-center w-10 h-10 border-2 rounded-full md:m-auto md:w-12 md:h-12 bg-Magnolia text-MarineBlue'
 function prev(){
-    if (current === 1){
+    if (current === 0){
         back.classList.remove('invisible')
     }
 }
+back.addEventListener('click', () => {
+    if(current < 5){
+        wrapper[current].classList.add('hidden')
+        wrapper[current - 1].classList.remove('hidden')
+        prev()
+        current--
+       
+    }
+    
+})
