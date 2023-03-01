@@ -25,7 +25,7 @@ next.addEventListener('click', () => {
     }
 })
 
-// 'flex items-center justify-center w-10 h-10 border-2 rounded-full md:m-auto md:w-12 md:h-12 bg-Magnolia text-MarineBlue'
+// 'flex items-center justify-center w-10 h-10 border-2 rounded-full md:m-auto md:w-12 md:h-12 bg-Magnolia text-MarineBlue'// 'flex items-center justify-center w-10 h-10 border-2 rounded-full md:m-auto md:w-12 md:h-12 bg-Magnolia text-MarineBlue'// 'flex items-center justify-center w-10 h-10 border-2 rounded-full md:m-auto md:w-12 md:h-12 bg-Magnolia text-MarineBlue'
 function prev(){
     if (current === 0){
         back.classList.remove('invisible')
