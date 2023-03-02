@@ -15,17 +15,20 @@ next.addEventListener('click', () => {
                 next.innerHTML = `
                 <button class="px-3 py-2 mr-2 font-medium text-white rounded-md text-md bg-MarineBlue md:px-1 md:py-1 md:text-xl" id="next_btn" type="submit"> Confirm </button>
                 `
+                return
+
             }else if(current===4){
             next.classList.add('hidden')
             
             }
             
-    }if(stpCircle < 4){
-        stp[stpCircle ].className.add('bg-Magnolia text-MarineBlue')
+    // }if(stpCircle < 4){
+    //     stp[stpCircle ].className.add('bg-Magnolia text-MarineBlue')
     }
+console.log(current)
+
 })
 
-// 'flex items-center justify-center w-10 h-10 border-2 rounded-full md:m-auto md:w-12 md:h-12 bg-Magnolia text-MarineBlue'// 'flex items-center justify-center w-10 h-10 border-2 rounded-full md:m-auto md:w-12 md:h-12 bg-Magnolia text-MarineBlue'// 'flex items-center justify-center w-10 h-10 border-2 rounded-full md:m-auto md:w-12 md:h-12 bg-Magnolia text-MarineBlue'
 function prev(){
     if (current === 0){
         back.classList.remove('invisible')
