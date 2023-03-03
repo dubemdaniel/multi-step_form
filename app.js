@@ -15,15 +15,20 @@ next.addEventListener('click', () => {
                 next.innerHTML = `
                 <button class="px-3 py-2 mr-2 font-medium text-white rounded-md text-md bg-MarineBlue md:px-1 md:py-1 md:text-xl" id="next_btn" type="submit"> Confirm </button>
                 `
-                return
 
-            }else if(current===4){
-            next.classList.add('hidden')
+            } if(current===4 && next){
+                     next.classList.add('invisible')
+
+
+                // if (next) {
+                //     next.classList.add('hidden')
+                //     return false
+                
             
+            // }else{
+            //     next.classList.remove('invisible')
             }
             
-    // }if(stpCircle < 4){
-    //     stp[stpCircle ].className.add('bg-Magnolia text-MarineBlue')
     }
 console.log(current)
 
@@ -41,6 +46,10 @@ back.addEventListener('click', () => {
         prev()
         current--
        
+    }else if (current === 3|| current === 2 || current === 1){
+        next.classList.add('invisible')
     }
+console.log(current)
+
     
 })

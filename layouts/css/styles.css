@@ -645,12 +645,12 @@ video {
   display: none;
 }
 
-.h-10 {
-  height: 2.5rem;
-}
-
 .h-52 {
   height: 13rem;
+}
+
+.h-10 {
+  height: 2.5rem;
 }
 
 .h-fit {
@@ -662,16 +662,16 @@ video {
   height: 28px;
 }
 
-.w-10 {
-  width: 2.5rem;
-}
-
 .w-full {
   width: 100%;
 }
 
 .w-2\/4 {
   width: 50%;
+}
+
+.w-10 {
+  width: 2.5rem;
 }
 
 .w-11\/12 {
@@ -1148,24 +1148,24 @@ video {
     display: grid;
   }
 
-  .md\:h-12 {
-    height: 3rem;
-  }
-
   .md\:h-full {
     height: 100%;
+  }
+
+  .md\:h-12 {
+    height: 3rem;
   }
 
   .md\:h-\[34\] {
     height: 34;
   }
 
-  .md\:w-12 {
-    width: 3rem;
-  }
-
   .md\:w-full {
     width: 100%;
+  }
+
+  .md\:w-12 {
+    width: 3rem;
   }
 
   .md\:w-\[60\] {
