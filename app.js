@@ -48,7 +48,10 @@ let currentCircle = 0
             console.log('ur pa')
         }
           })
+          
       });
+      
+     
 
 function validate(){
     const name = document.getElementById('name').value.trim()
@@ -57,6 +60,13 @@ function validate(){
     const nameErr = document.getElementById('nameErr')
     const emailErr = document.getElementById('emailErr')
     const phoneErr = document.getElementById('phoneErr')
+    // clearTimeout(timer)
+    
+     if (name || email || phone){
+        nameErr.innerText = ''
+       emailErr.innerText = ''
+       phoneErr.innerText = ''
+   }
     
     if(name.length == 0){
         nameErr.innerText = 'Name is Required'
@@ -86,13 +96,9 @@ function validate(){
         return false
     }
     
-    else{
-        nameErr.innerText = ''
-        emailErr.innerText = ''
-        phoneErr.innerText = ''
+       
         return true
-    }
     
-    // 
 }
+
 // /^[A-Za-z]\._\-[0-9]*[@][A-Za-z]*[\.][a-z]{2,4}$/
