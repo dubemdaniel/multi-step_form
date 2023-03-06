@@ -57,3 +57,42 @@ console.log(current)
 
     
 })
+
+
+// ============================================================
+// second attempt still giving me issues
+
+
+showPage(currentPage);
+
+
+nextButton.addEventListener('click' ,(e) => {
+    e.preventDefault()
+    if (currentPage < pages.length - 1) {
+
+        currentPage++ ;
+
+        showPage(currentPage);
+    }
+    console(currentPage)
+})
+
+prevButton.addEventListener("click", (e) => {
+  e.preventDefault();
+  if ( currentPage > 0){
+
+    currentPage-- ;
+
+    showPage(currentPage);
+  }
+});
+
+function showPage(current) {
+    pages.forEach((page, index) => {
+      if (index === current) {
+        page.classList.add('hidden');
+      } else {
+        page.classList.remove('hidden');
+      }
+    });
+  }
