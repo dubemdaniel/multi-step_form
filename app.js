@@ -2,6 +2,7 @@ const pages = document.querySelectorAll(".wrapper");
 const prevButton = document.querySelectorAll(".back_btn");
 const nextButton = document.querySelectorAll(".next_btn");
 const circles = document.querySelectorAll(".stp")
+const toggleLable  = document.getElementById("toggleLabel")
 
 let currentPage = 1;
 let currentCircle = 0
@@ -28,7 +29,7 @@ let currentCircle = 0
 
       nextButton.forEach(btn => {
         btn.addEventListener('click', () => {
-            if(currentPage < 5 && validate()){
+            if(currentPage < 5 || validate()){
                 document.querySelector(`.step-${currentPage}`).classList.add('hidden')  ;
                 console.log(currentPage)
                 currentPage++
@@ -43,15 +44,13 @@ let currentCircle = 0
             }
            
             currentCircle++
-            console.log(currentPage)
-            // currentPage++
-            console.log('ur pa')
         }
           })
           
       });
       
      
+// form validation function
 
 function validate(){
     const name = document.getElementById('name').value.trim()
@@ -60,7 +59,6 @@ function validate(){
     const nameErr = document.getElementById('nameErr')
     const emailErr = document.getElementById('emailErr')
     const phoneErr = document.getElementById('phoneErr')
-    // clearTimeout(timer)
     
      if (name || email || phone){
         nameErr.innerText = ''
@@ -94,11 +92,30 @@ function validate(){
     }else if(!phone.match(/^[0-9]{10}$/)){
         phoneErr.innerText = 'Must be digit'
         return false
+    }    
+        return true
+}
+// functions for month/year toggle in plan slide
+
+toggleLable.addEventListener('click', () => {
+    const toggle = document.getElementById('monthYear');
+    const arcade = document.getElementById('arcadePrice');
+    const advanced = document.getElementById('advancedPrice');
+    const pro = document.getElementById('proPrice');
+    const arcadeKind = document.getElementById('arcadeKind');
+    const advancedKind = document.getElementById('advancedKind');
+    const proKind = document.getElementById('proKind');
+    if(toggle.checked){
+        console.log('checkBox is checked')
+        arcade.innerText = '$90/yr'
+        advanced.innerText = '$120/yr'
+        pro.innerText = '$150/yr'
+
+    }else{
+        console.log('checkBox is not checked')
+        arcade.innerText = '$9/mo'
+        advanced.innerText = '$12/mo'
+        pro.innerText = '$15/mo'
     }
     
-       
-        return true
-    
-}
-
-// /^[A-Za-z]\._\-[0-9]*[@][A-Za-z]*[\.][a-z]{2,4}$/
+})
