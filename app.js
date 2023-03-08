@@ -110,12 +110,17 @@ toggleLable.addEventListener('click', () => {
         arcade.innerText = '$90/yr'
         advanced.innerText = '$120/yr'
         pro.innerText = '$150/yr'
-
+        arcadeKind.classList.remove('hidden')
+        advancedKind.classList.remove('hidden')
+        proKind.classList.remove('hidden')
     }else{
         console.log('checkBox is not checked')
         arcade.innerText = '$9/mo'
         advanced.innerText = '$12/mo'
         pro.innerText = '$15/mo'
+        arcadeKind.classList.add('hidden')
+        advancedKind.classList.add('hidden')
+        proKind.classList.add('hidden')
     }
     
 })
