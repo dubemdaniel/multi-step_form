@@ -45,10 +45,8 @@ let currentCircle = 0
            
             currentCircle++
         }
-          })
-          
+          })    
       });
-      
      
 // form validation function
 
