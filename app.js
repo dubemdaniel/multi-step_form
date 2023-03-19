@@ -29,7 +29,7 @@ let currentCircle = 0
 
       nextButton.forEach(btn => {
         btn.addEventListener('click', () => {
-            if(currentPage < 5 || validate()){
+            if(currentPage < 5 && validate()){
                 document.querySelector(`.step-${currentPage}`).classList.add('hidden')  ;
                 console.log(currentPage)
                 currentPage++
@@ -83,13 +83,13 @@ function validate(){
         phoneErr.innerText = 'Phone number required'
         return false
 
-    } else if(phone.length !== 10){
-        phoneErr.innerText = 'Invalid phone number'
-        return false
+    // } else if(phone.length !== 10){
+    //     phoneErr.innerText = 'Invalid phone number'
+    //     return false
 
-    }else if(!phone.match(/^[0-9]{10}$/)){
-        phoneErr.innerText = 'Must be digit'
-        return false
+    // }else if(!phone.match(/^[0-9]{10}$/)){
+    //     phoneErr.innerText = 'Must be digit'
+    //     return false
     }    
         return true
 }
@@ -119,6 +119,5 @@ toggleLable.addEventListener('click', () => {
         arcadeKind.classList.add('hidden')
         advancedKind.classList.add('hidden')
         proKind.classList.add('hidden')
-    }
-    
+    } 
 })
