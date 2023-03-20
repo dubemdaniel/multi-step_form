@@ -25,7 +25,6 @@ let currentCircle = 0
 
   
       console.log(` this is ${currentPage}th page`)
-            // currentPage++
 
       nextButton.forEach(btn => {
         btn.addEventListener('click', () => {
