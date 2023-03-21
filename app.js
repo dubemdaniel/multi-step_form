@@ -1,7 +1,11 @@
 const pages = document.querySelectorAll(".wrapper");
+
 const prevButton = document.querySelectorAll(".back_btn");
+
 const nextButton = document.querySelectorAll(".next_btn");
+
 const circles = document.querySelectorAll(".stp")
+
 const toggleLable  = document.getElementById("toggleLabel")
 
 let currentPage = 1;
@@ -22,7 +26,6 @@ let currentCircle = 0
             }
         })
     });
-
   
       console.log(` this is ${currentPage}th page`)
 
@@ -51,10 +54,15 @@ let currentCircle = 0
 
 function validate(){
     const name = document.getElementById('name').value.trim()
+    
     const email = document.getElementById('email').value
+    
     const phone = document.getElementById('phone').value
+    
     const nameErr = document.getElementById('nameErr')
+    
     const emailErr = document.getElementById('emailErr')
+    
     const phoneErr = document.getElementById('phoneErr')
     
      if (name || email || phone){
