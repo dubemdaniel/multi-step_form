@@ -44,7 +44,6 @@ let currentCircle = 0
                 circles[currentCircle + 2].className =  'flex items-center justify-center w-10 h-10 border-2 rounded-full md:m-auto md:w-12 md:h-12 stp bg-Magnolia text-MarineBlue' 
                 
             }
-           
             currentCircle++
         }
           })    
