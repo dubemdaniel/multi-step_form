@@ -9,6 +9,7 @@ const circles = document.querySelectorAll(".stp")
 const toggleLable  = document.getElementById("toggleLabel")
 
 let currentPage = 1;
+
 let currentCircle = 0
 
     prevButton.forEach(backBtn => {
@@ -31,9 +32,13 @@ let currentCircle = 0
 
       nextButton.forEach(btn => {
         btn.addEventListener('click', () => {
+
             if(currentPage < 5 || validate()){
+
                 document.querySelector(`.step-${currentPage}`).classList.add('hidden')  ;
+                
                 console.log(currentPage)
+
                 currentPage++
                 
             document.querySelector(`.step-${currentPage }`).classList.remove('hidden')  ;
