@@ -15,10 +15,10 @@ module.exports = {
         Alabaster: " hsl(231, 100%, 99%)",
         White: "hsl(0, 0%, 100%)",
       },
-      backgroundImage: {
-        desktopImg: "url('/assets/images/bg-sidebar-desktop.svg')",
-        mobileImg: "url('/assets/images/bg-sidebar-mobile.svg')",
-      },
+      // backgroundImage: {
+      //   desktopImg: "url('/assets/images/bg-sidebar-desktop.svg')",
+      //   mobileImg: "url('/assets/images/bg-sidebar-mobile.svg')",
+      // },
       fontFamily: {
         myFont: ["Montserrat", "sans-serif"],
       },

@@ -2,10 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
-/* .bg-mobileImg {
+.bg-mobileImg {
   background-image: url(assets/images/bg-sidebar-mobile.svg);
 }
 
 .mobileImg {
   background-image: url(assets/images/bg-sidebar-mobile.svg);
-} */
+}
