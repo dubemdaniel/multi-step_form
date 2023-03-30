@@ -15,19 +15,12 @@ module.exports = {
         Alabaster: " hsl(231, 100%, 99%)",
         White: "hsl(0, 0%, 100%)",
       },
-      backgroundImage: {
-        desktopImg: "url('assets/images/bg-sidebar-desktop.svg')",
-        mobileImg: "url('assets/images/bg-sidebar-mobile.svg');",
-      },
+      // backgroundImage: {
+      //   desktopImg: 'url("/assets/images/bg-sidebar-desktop.svg")',
+      //   mobileImg: "url('/assets/images/bg-sidebar-mobile.svg')",
+      // },
       fontFamily: {
         myFont: ["Montserrat", "sans-serif"],
-      },
-      image: {
-        advanced: "url(/assets/images/icon-advanced.svg)",
-        arcade: "url(/assets/images/icon-arcade.svg)",
-        pro: "url(/assets/images/icon-pro.svg)",
-        thanks: "url(/assets/images/icon-thank-you.svg)",
-        advanced: "url(/assets/images/icon-advanced.svg)",
       },
       boxShadow: {
         myShadow: "-1px -1px 10px hsla(213, 96%, 18%, 0.2)",
