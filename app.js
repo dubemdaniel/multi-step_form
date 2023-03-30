@@ -33,10 +33,10 @@ let currentCircle = 0
       nextButton.forEach(btn => {
         btn.addEventListener('click', () => {
 
-            if(currentPage < 5 || validate()){
+            if(currentPage < 5 && validate()){
 
                 document.querySelector(`.step-${currentPage}`).classList.add('hidden')  ;
-                
+
                 console.log(currentPage)
 
                 currentPage++
