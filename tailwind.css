@@ -3,9 +3,9 @@
 @tailwind utilities;
 
 .bg-mobileImg {
-  background-image: url("/assets/images/bg-sidebar-mobile.svg");
+  background-image: url("assets/images/bg-sidebar-mobile.svg");
 }
 
 .mobileImg {
-  background-image: url("/assets/images/bg-sidebar-mobile.svg");
+  background-image: url("assets/images/bg-sidebar-mobile.svg");
 }
