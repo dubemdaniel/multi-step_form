@@ -131,13 +131,21 @@ const enableTogable = () => {
 
   toggleLable.addEventListener("click", () => {
     const toggle = document.getElementById("monthYear");
+
     const arcade = document.getElementById("arcadePrice");
+    
     const advanced = document.getElementById("advancedPrice");
+    
     const pro = document.getElementById("proPrice");
+    
     const arcadeKind = document.getElementById("arcadeKind");
+    
     const advancedKind = document.getElementById("advancedKind");
+    
     const proKind = document.getElementById("proKind");
+    
     console.log(toggle);
+    
     if (toggle.checked) {
       console.log("checkBox is checked");
       arcade.innerText = "$90/yr";
