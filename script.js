@@ -116,7 +116,9 @@ function validate() {
   } else if (phone.length == 0) {
     phoneErr.innerText = "Phone number required";
     return false;
-  } // else if (phone.length !== 10) {
+  }
+  
+  // else if (phone.length !== 10) {
   //   phoneErr.innerText = "Invalid phone number";
   //   return false;
   // } else if (!phone.match(/^[0-9]{10}$/)) {
@@ -130,6 +132,7 @@ const enableTogable = () => {
   const toggleLable = document.getElementById("toggleLabel");
 
   toggleLable.addEventListener("click", () => {
+    
     const toggle = document.getElementById("monthYear");
 
     const arcade = document.getElementById("arcadePrice");
