@@ -73,6 +73,7 @@ window.onload = () => {
 
     // first we increase the current page
     currentPage--;
+    
     currentCirle--;
 
     syncUI(currentPage, currentCirle);
@@ -132,7 +133,7 @@ const enableTogable = () => {
   const toggleLable = document.getElementById("toggleLabel");
 
   toggleLable.addEventListener("click", () => {
-    
+
     const toggle = document.getElementById("monthYear");
 
     const arcade = document.getElementById("arcadePrice");
@@ -166,5 +167,7 @@ const enableTogable = () => {
       advancedKind.classList.add("hidden");
       proKind.classList.add("hidden");
     }
+
   });
+
 };
