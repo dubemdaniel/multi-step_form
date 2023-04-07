@@ -67,13 +67,14 @@ window.onload = () => {
 
     // first we increase the current page
   };
+  
 
   const prevPage = () => {
     // we will validate all the input
 
     // first we increase the current page
     currentPage--;
-    
+
     currentCirle--;
 
     syncUI(currentPage, currentCirle);
