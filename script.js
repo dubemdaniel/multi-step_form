@@ -67,7 +67,7 @@ window.onload = () => {
 
     // first we increase the current page
   };
-  
+
 
   const prevPage = () => {
     // we will validate all the input
@@ -99,7 +99,9 @@ function validate() {
   console.log(name, email, phone);
   if (name || email || phone) {
     nameErr.innerText = "";
+
     emailErr.innerText = "";
+    
     phoneErr.innerText = "";
   }
 
