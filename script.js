@@ -97,11 +97,13 @@ function validate() {
   const phoneErr = document.getElementById("phoneErr");
 
   console.log(name, email, phone);
+  
   if (name || email || phone) {
+
     nameErr.innerText = "";
 
     emailErr.innerText = "";
-    
+
     phoneErr.innerText = "";
   }
 
@@ -133,6 +135,7 @@ function validate() {
 }
 
 const enableTogable = () => {
+
   const toggleLable = document.getElementById("toggleLabel");
 
   toggleLable.addEventListener("click", () => {
