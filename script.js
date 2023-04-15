@@ -44,11 +44,8 @@ window.onload = () => {
     }
 
     nextButton = document.querySelector(".next_btn");
-    
-    prevButton = document.querySelector(".back_btn");
-    
+    prevButton = document.querySelector(".back_btn");  
     nextButton.addEventListener("click", nextPage);
-    
     prevButton.addEventListener("click", prevPage);
   };
 
@@ -71,7 +68,6 @@ window.onload = () => {
     // first we increase the current page
   };
 
-
   const prevPage = () => {
     // we will validate all the input
 
@@ -88,25 +84,17 @@ window.onload = () => {
 
 function validate() {
   const name = document.getElementById("name").value.trim();
-
   const email = document.getElementById("email").value;
-
   const phone = document.getElementById("phone").value;
-
   const nameErr = document.getElementById("nameErr");
-
   const emailErr = document.getElementById("emailErr");
-
   const phoneErr = document.getElementById("phoneErr");
-
+  
   console.log(name, email, phone);
   
   if (name || email || phone) {
-
     nameErr.innerText = "";
-
     emailErr.innerText = "";
-
     phoneErr.innerText = "";
   }
 
@@ -142,25 +130,18 @@ const enableTogable = () => {
   const toggleLable = document.getElementById("toggleLabel");
 
   toggleLable.addEventListener("click", () => {
-
     const toggle = document.getElementById("monthYear");
-
     const arcade = document.getElementById("arcadePrice");
-    
-    const advanced = document.getElementById("advancedPrice");
-    
+    const advanced = document.getElementById("advancedPrice");  
     const pro = document.getElementById("proPrice");
-    
     const arcadeKind = document.getElementById("arcadeKind");
-    
     const advancedKind = document.getElementById("advancedKind");
-    
     const proKind = document.getElementById("proKind");
     
-    console.log(toggle);
+    // console.log(toggle);
     
     if (toggle.checked) {
-      console.log("checkBox is checked");
+      // console.log("checkBox is checked");
       arcade.innerText = "$90/yr";
       advanced.innerText = "$120/yr";
       pro.innerText = "$150/yr";
@@ -168,7 +149,7 @@ const enableTogable = () => {
       advancedKind.classList.remove("hidden");
       proKind.classList.remove("hidden");
     } else {
-      console.log("checkBox is not checked");
+      // console.log("checkBox is not checked");
       arcade.innerText = "$9/mo";
       advanced.innerText = "$12/mo";
       pro.innerText = "$15/mo";
@@ -176,6 +157,7 @@ const enableTogable = () => {
       advancedKind.classList.add("hidden");
       proKind.classList.add("hidden");
     }
+    console.log(`${arcade.innerHTML} : ${advanced.innerHTML} : ${pro.innerHTML}`)
 
   });
 
