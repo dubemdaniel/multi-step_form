@@ -46,7 +46,7 @@ class UI {
     <form class="">
       <div class="block md:flex md:gap-4">
       <label for="arcade" class="block mt-3 md:w-full" id="label">
-        <input type="radio" id="arcade" class="hidden peer" name="plan">
+        <input type="radio" id="arcade" class="hidden peer plans" name="plan">
         <div class="grid grid-cols-4 p-3 border-2 rounded-lg text-MarineBlue focus:outline-MarineBlue border-slate-300 md:flex-col md:justify-center md:flex md:items-start peer-checked:border-MarineBlue peer-checked:bg-Magnolia">
           <img src="assets/images/icon-arcade.svg" alt="arcade icon" class="w-12 my-auto">
           <div class="col-span-3 md:mt-8">
@@ -57,7 +57,7 @@ class UI {
         </div>
       </label>
       <label for="advanced" class="block mt-3 md:w-full" id="label">
-        <input type="radio" id="advanced" class="hidden peer" name="plan">
+        <input type="radio" id="advanced" class="hidden peer plans" name="plan">
           <div class="grid grid-cols-4 p-3 border-2 rounded-lg text-MarineBlue focus:outline-MarineBlue border-slate-300 md:flex-col md:justify-center md:items-start md:flex peer-checked:border-MarineBlue peer-checked:bg-Magnolia">
             <img src="assets/images/icon-advanced.svg" alt="advanced icon" class="w-12 my-auto">
             <div class="col-span-3 md:mt-8 ">
@@ -68,7 +68,7 @@ class UI {
           </div>
       </label>
       <label for="pro" class="block mt-3 md:w-full" id="label">
-        <input type="radio" id="pro" class="hidden peer" name="plan">
+        <input type="radio" id="pro" class="hidden peer plans" name="plan">
         <div class="grid grid-cols-4 p-3 border-2 rounded-lg text-MarineBlue focus:outline-MarineBlue border-slate-300 md:flex-col md:justify-center md:items-start md:flex peer-checked:border-MarineBlue peer-checked:bg-Magnolia ">
           <img src="assets/images/icon-pro.svg" alt="pro icon" class="w-12 my-auto">
           <div class="col-span-3 md:mt-8">

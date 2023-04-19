@@ -41,6 +41,7 @@ window.onload = () => {
 
     if (currentPage === 2) {
       enableTogable();
+      enablePlan()
     }
 
     nextButton = document.querySelector(".next_btn");
@@ -63,6 +64,7 @@ window.onload = () => {
       currentPage++;
       currentCirle++;
       syncUI(currentPage, currentCirle);
+      enablePlan()
     }
 
     // first we increase the current page
@@ -160,5 +162,15 @@ const enableTogable = () => {
     console.log(`${arcade.innerHTML} : ${advanced.innerHTML} : ${pro.innerHTML}`)
 
   });
-
 };
+
+const enablePlan = () => {
+  const plans = document.querySelectorAll(".plans")
+  plans.forEach(plan => {
+    if(plan.checked){
+      console.log('ur papa')
+    }else{
+      console.log('nothing like that')
+    }
+  });
+}
