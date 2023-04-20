@@ -45,8 +45,11 @@ window.onload = () => {
     }
 
     nextButton = document.querySelector(".next_btn");
+
     prevButton = document.querySelector(".back_btn");  
+    
     nextButton.addEventListener("click", nextPage);
+    
     prevButton.addEventListener("click", prevPage);
   };
 
