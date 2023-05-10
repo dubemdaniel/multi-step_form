@@ -7,7 +7,10 @@ window.onload = () => {
 
   let circles = document.querySelectorAll(".stp");
 
-  const data = {};
+  const data = {
+    title : "" ,
+    price : ""
+  };
 
   const ui = new UI();
 
@@ -41,7 +44,7 @@ window.onload = () => {
 
     if (currentPage === 2) {
       enableTogable();
-      enablePlan()
+      // enablePlan()
     }
 
     nextButton = document.querySelector(".next_btn");
@@ -67,7 +70,7 @@ window.onload = () => {
       currentPage++;
       currentCirle++;
       syncUI(currentPage, currentCirle);
-      enablePlan()
+      // enablePlan()
     }
 
     // first we increase the current page
@@ -162,18 +165,25 @@ const enableTogable = () => {
       advancedKind.classList.add("hidden");
       proKind.classList.add("hidden");
     }
-    console.log(`${arcade.innerHTML} : ${advanced.innerHTML} : ${pro.innerHTML}`)
+    // console.log(`${arcade.innerHTML} : ${advanced.innerHTML} : ${pro.innerHTML}`)
+    
+    enablePlan()
+
+    // ui.renderSummaryPage()
 
   });
+
 };
 
 const enablePlan = () => {
+  const toggle = document.getElementById("monthYear");
   const plans = document.querySelectorAll(".plans")
+  let isChecked = false
   plans.forEach(plan => {
-    if(plan.checked){
+    if(plan.checked && toggle.checked){
+      isChecked = true
       console.log('ur papa')
-    }else{
-      console.log('nothing like that')
     }
   });
+  return isChecked
 }
