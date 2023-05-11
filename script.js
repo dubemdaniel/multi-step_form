@@ -174,10 +174,16 @@ const enableTogable = () => {
   });
 
 };
+//  const initPlan = () => {
+//    const plans
+//  }
 
 const enablePlan = () => {
   const toggle = document.getElementById("monthYear");
   const plans = document.querySelectorAll(".plans")
+  plans.forEach(plan => plan.addEventListener)
+  const norms = Array.from(plans).find(plan => plan.checked)
+  console.log(norms)
   let isChecked = false
   plans.forEach(plan => {
     if(plan.checked && toggle.checked){
