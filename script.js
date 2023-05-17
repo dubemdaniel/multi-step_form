@@ -174,9 +174,6 @@ const enableTogable = () => {
   });
 
 };
-//  const initPlan = () => {
-//    const plans
-//  }
 
 const enablePlan = () => {
   const toggle = document.getElementById("monthYear");
