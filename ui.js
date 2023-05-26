@@ -46,11 +46,11 @@ class UI {
     <form class="">
       <div class="block md:flex md:gap-4">
       <label for="arcade" class="block mt-3 md:w-full" id="label">
-        <input type="radio" id="arcade" class="hidden peer plans" name="plan">
+        <input type="radio" id="arcade" class="hidden peer plans" name="plan" checked>
         <div class="grid grid-cols-4 p-3 border-2 rounded-lg text-MarineBlue focus:outline-MarineBlue border-slate-300 md:flex-col md:justify-center md:flex md:items-start peer-checked:border-MarineBlue peer-checked:bg-Magnolia">
           <img src="assets/images/icon-arcade.svg" alt="arcade icon" class="w-12 my-auto">
           <div class="col-span-3 md:mt-8">
-            <h4 class="text-base md:text-lg md:font-bold ">Arcade</h4>
+            <h4 class="text-base md:text-lg md:font-bold planName">Arcade</h4>
             <p id="arcadePrice" class="my-[.2rem] text-slate-500 tracking-normal text-sm md:text-base">$9/mo</p>
             <h5 class="hidden text-xs font-bold" id="arcadeKind">2 months free</h5>
           </div>
@@ -61,7 +61,7 @@ class UI {
           <div class="grid grid-cols-4 p-3 border-2 rounded-lg text-MarineBlue focus:outline-MarineBlue border-slate-300 md:flex-col md:justify-center md:items-start md:flex peer-checked:border-MarineBlue peer-checked:bg-Magnolia">
             <img src="assets/images/icon-advanced.svg" alt="advanced icon" class="w-12 my-auto">
             <div class="col-span-3 md:mt-8 ">
-              <h4 class="text-base md:text-lg md:font-bold">Advanced</h4>
+              <h4 class="text-base md:text-lg md:font-bold planName">Advanced</h4>
               <p id="advancedPrice" class="my-[.2rem] text-slate-500 tracking-normal text-sm md:text-base">$12/mo</p>
               <h5 class="hidden text-xs font-bold" id="advancedKind">2 months free</h5>
             </div>
@@ -72,7 +72,7 @@ class UI {
         <div class="grid grid-cols-4 p-3 border-2 rounded-lg text-MarineBlue focus:outline-MarineBlue border-slate-300 md:flex-col md:justify-center md:items-start md:flex peer-checked:border-MarineBlue peer-checked:bg-Magnolia ">
           <img src="assets/images/icon-pro.svg" alt="pro icon" class="w-12 my-auto">
           <div class="col-span-3 md:mt-8">
-            <h4 class="text-base md:text-lg md:font-bold">Pro</h4>
+            <h4 class="text-base md:text-lg md:font-bold planName">Pro</h4>
             <p id="proPrice" class="my-[.2rem] text-slate-500 tracking-normal text-sm md:text-base">$15/mo</p>
             <h5 class="hidden text-xs font-bold" id="proKind">2 months free</h5>
           </div>

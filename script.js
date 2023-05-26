@@ -178,15 +178,15 @@ const enableTogable = () => {
 const enablePlan = () => {
   const toggle = document.getElementById("monthYear");
   const plans = document.querySelectorAll(".plans")
+  const planName = document.querySelectorAll(".planName")
   plans.forEach(plan => plan.addEventListener)
   const norms = Array.from(plans).find(plan => plan.checked)
-  console.log(norms)
-  let isChecked = false
+  // let isChecked = false
   plans.forEach(plan => {
     if(plan.checked && toggle.checked){
-      isChecked = true
-      console.log('ur papa')
+      // isChecked = true
+  console.log(norms)
     }
   });
-  return isChecked
+
 }
