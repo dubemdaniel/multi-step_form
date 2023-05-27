@@ -45,9 +45,9 @@ class UI {
     <p class="mt-4 mb-4 text-sm text-slate-500 md:text-xl">You have the option of monthly or yearly billing</p>
     <form class="">
       <div class="block md:flex md:gap-4">
-      <label for="arcade" class="block mt-3 md:w-full" id="label">
+      <label for="arcade" class="block mt-3 md:w-full " id="">
         <input type="radio" id="arcade" class="hidden peer plans" name="plan" checked>
-        <div class="grid grid-cols-4 p-3 border-2 rounded-lg text-MarineBlue focus:outline-MarineBlue border-slate-300 md:flex-col md:justify-center md:flex md:items-start peer-checked:border-MarineBlue peer-checked:bg-Magnolia">
+        <div class="grid grid-cols-4 p-3 border-2 rounded-lg text-MarineBlue focus:outline-MarineBlue border-slate-300 md:flex-col md:justify-center md:flex md:items-start peer-checked:border-MarineBlue peer-checked:bg-Magnolia label">
           <img src="assets/images/icon-arcade.svg" alt="arcade icon" class="w-12 my-auto">
           <div class="col-span-3 md:mt-8">
             <h4 class="text-base md:text-lg md:font-bold planName">Arcade</h4>
@@ -56,9 +56,9 @@ class UI {
           </div>
         </div>
       </label>
-      <label for="advanced" class="block mt-3 md:w-full" id="label">
+      <label for="advanced" class="block mt-3 md:w-full " id="">
         <input type="radio" id="advanced" class="hidden peer plans" name="plan">
-          <div class="grid grid-cols-4 p-3 border-2 rounded-lg text-MarineBlue focus:outline-MarineBlue border-slate-300 md:flex-col md:justify-center md:items-start md:flex peer-checked:border-MarineBlue peer-checked:bg-Magnolia">
+          <div class="grid grid-cols-4 p-3 border-2 rounded-lg text-MarineBlue focus:outline-MarineBlue border-slate-300 md:flex-col md:justify-center md:items-start md:flex peer-checked:border-MarineBlue peer-checked:bg-Magnolia label">
             <img src="assets/images/icon-advanced.svg" alt="advanced icon" class="w-12 my-auto">
             <div class="col-span-3 md:mt-8 ">
               <h4 class="text-base md:text-lg md:font-bold planName">Advanced</h4>
@@ -67,9 +67,9 @@ class UI {
             </div>
           </div>
       </label>
-      <label for="pro" class="block mt-3 md:w-full" id="label">
+      <label for="pro" class="block mt-3 md:w-full " id="">
         <input type="radio" id="pro" class="hidden peer plans" name="plan">
-        <div class="grid grid-cols-4 p-3 border-2 rounded-lg text-MarineBlue focus:outline-MarineBlue border-slate-300 md:flex-col md:justify-center md:items-start md:flex peer-checked:border-MarineBlue peer-checked:bg-Magnolia ">
+        <div class="grid grid-cols-4 p-3 border-2 rounded-lg text-MarineBlue focus:outline-MarineBlue border-slate-300 md:flex-col md:justify-center md:items-start md:flex peer-checked:border-MarineBlue peer-checked:bg-Magnolia label">
           <img src="assets/images/icon-pro.svg" alt="pro icon" class="w-12 my-auto">
           <div class="col-span-3 md:mt-8">
             <h4 class="text-base md:text-lg md:font-bold planName">Pro</h4>

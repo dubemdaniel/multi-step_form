@@ -7,12 +7,11 @@ window.onload = () => {
 
   let circles = document.querySelectorAll(".stp");
 
-  const data = {
-    title : "" ,
-    price : ""
-  };
+ 
 
   const ui = new UI();
+
+  const storage = new Storage();
 
   const uiPages = [
     ui.renderInfoPage,
@@ -21,6 +20,7 @@ window.onload = () => {
     ui.renderSummaryPage,
     ui.renderThankYouPage,
   ];
+  // console.log(data)
 
   let currentPage = 1;
   let currentCirle = 0;
@@ -44,6 +44,7 @@ window.onload = () => {
 
     if (currentPage === 2) {
       enableTogable();
+      RenderPlan()
       // enablePlan()
     }
 
@@ -167,7 +168,7 @@ const enableTogable = () => {
     }
     // console.log(`${arcade.innerHTML} : ${advanced.innerHTML} : ${pro.innerHTML}`)
     
-    enablePlan()
+    // enablePlan()
 
     // ui.renderSummaryPage()
 
@@ -175,18 +176,44 @@ const enableTogable = () => {
 
 };
 
-const enablePlan = () => {
-  const toggle = document.getElementById("monthYear");
-  const plans = document.querySelectorAll(".plans")
-  const planName = document.querySelectorAll(".planName")
-  plans.forEach(plan => plan.addEventListener)
-  const norms = Array.from(plans).find(plan => plan.checked)
-  // let isChecked = false
-  plans.forEach(plan => {
-    if(plan.checked && toggle.checked){
-      // isChecked = true
-  console.log(norms)
-    }
-  });
+ const RenderPlan = () => {
+  const labels = document.querySelectorAll('.label')
 
-}
+  labels.forEach(label => {
+    label.addEventListener('click', (e) => {
+
+      console.log('normally, u dey mad')
+
+      const planName = e.target.children[1].children[0].textContent
+      const planPrice = e.target.children[1].children[1].textContent
+
+      console.log(`${planName} : ${planPrice}`)
+      
+      const discount = e.target.children[1].children[2].textContent
+      
+      if (discount.className === 'hidden') {
+        console.log('discount')
+      } else {
+        console.log('no discount')
+      }
+
+    })
+    
+  });
+ }
+
+// const enablePlan = () => {
+//   const toggle = document.getElementById("monthYear");
+//   const plans = document.querySelectorAll(".plans")
+//   const planName = document.querySelectorAll(".planName")
+//   plans.forEach(plan => plan.addEventListener)
+//   const norms = Array.from(plans).find(plan => plan.checked)
+//   // let isChecked = false
+//   plans.forEach(plan => {
+//     if(plan.checked && toggle.checked){
+//       // isChecked = true
+//   console.log(norms)
+//     }
+//   });
+
+// }
