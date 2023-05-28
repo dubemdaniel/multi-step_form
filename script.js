@@ -190,13 +190,10 @@ const enableTogable = () => {
       console.log(`${planName} : ${planPrice}`)
       
       const discount = e.target.children[1].children[2].textContent
-      
-      if (discount.className === 'hidden') {
-        console.log('discount')
-      } else {
-        console.log('no discount')
-      }
 
+      const freePlan = document.querySelectorAll('div div h5')
+     
+      console.log(freePlan.e)
     })
     
   });

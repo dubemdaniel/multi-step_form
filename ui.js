@@ -52,7 +52,7 @@ class UI {
           <div class="col-span-3 md:mt-8">
             <h4 class="text-base md:text-lg md:font-bold planName">Arcade</h4>
             <p id="arcadePrice" class="my-[.2rem] text-slate-500 tracking-normal text-sm md:text-base">$9/mo</p>
-            <h5 class="hidden text-xs font-bold" id="arcadeKind">2 months free</h5>
+            <h5 class="hidden text-xs font-bold freePlan" id="arcadeKind">2 months free</h5>
           </div>
         </div>
       </label>
@@ -63,7 +63,7 @@ class UI {
             <div class="col-span-3 md:mt-8 ">
               <h4 class="text-base md:text-lg md:font-bold planName">Advanced</h4>
               <p id="advancedPrice" class="my-[.2rem] text-slate-500 tracking-normal text-sm md:text-base">$12/mo</p>
-              <h5 class="hidden text-xs font-bold" id="advancedKind">2 months free</h5>
+              <h5 class="hidden text-xs font-bold freePlan" id="advancedKind">2 months free</h5>
             </div>
           </div>
       </label>
@@ -74,7 +74,7 @@ class UI {
           <div class="col-span-3 md:mt-8">
             <h4 class="text-base md:text-lg md:font-bold planName">Pro</h4>
             <p id="proPrice" class="my-[.2rem] text-slate-500 tracking-normal text-sm md:text-base">$15/mo</p>
-            <h5 class="hidden text-xs font-bold" id="proKind">2 months free</h5>
+            <h5 class="hidden text-xs font-bold freePlan" id="proKind">2 months free</h5>
           </div>
         </div>
       </label>
