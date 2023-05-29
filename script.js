@@ -191,13 +191,23 @@ const enableTogable = () => {
       
       const discount = e.target.children[1].children[2].textContent
 
-      const freePlan = document.querySelectorAll('div div h5')
-     
-      console.log(freePlan.e)
+      let freePlan = document.querySelector('.freePlan');
+
+      // console.log(discount)
+
+      if (freePlan.classList.contains('hidden')){
+        console.log('ur fada')
+      } else {
+        console.log('ur mama')
+        console.log(discount)
+        
+      }
+      storage.setData()
     })
-    
   });
  }
+ 
+  
 
 // const enablePlan = () => {
 //   const toggle = document.getElementById("monthYear");
