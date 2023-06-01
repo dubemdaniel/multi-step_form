@@ -1,19 +1,28 @@
-class Storage{
+class Database{
     constructor(){
         this.data = {
             planTitle : '',
             planPrice : '',
-            addonTitle : '',
-            addonName : '',
+            addon : [],
             isPlanYearly : false, 
+            monthYear : '',
         }
-
    }
 
+   setData(data){
+       this.data = {...this.data, ...data}
+   }
+  
+   updateData (key, value) {
+    this.data[key] = value
+   }
 
-    setData(){}
+   getData () {
+       return this.data;
+   }
 
-    getData(){}
+   getSingleData (key) {
+    return this.data[key]
 
-
+   }
 }

@@ -45,34 +45,40 @@ class UI {
     <p class="mt-4 mb-4 text-sm text-slate-500 md:text-xl">You have the option of monthly or yearly billing</p>
     <form class="">
       <div class="block md:flex md:gap-4">
-      <label for="arcade" class="block mt-3 md:w-full " id="">
+      <label for="arcade" class="block mt-3 md:w-full " id="arcadePlan">
         <input type="radio" id="arcade" class="hidden peer plans" name="plan" checked>
-        <div class="grid grid-cols-4 p-3 border-2 rounded-lg text-MarineBlue focus:outline-MarineBlue border-slate-300 md:flex-col md:justify-center md:flex md:items-start peer-checked:border-MarineBlue peer-checked:bg-Magnolia label">
+        <div class="grid grid-cols-4 p-3 border-2 rounded-lg text-MarineBlue border-slate-300 md:flex-col md:justify-center md:flex md:items-startlabel 
+ peer-checked:border-MarineBlue peer-checked:bg-Magnolia 
+ ">
           <img src="assets/images/icon-arcade.svg" alt="arcade icon" class="w-12 my-auto">
           <div class="col-span-3 md:mt-8">
-            <h4 class="text-base md:text-lg md:font-bold planName">Arcade</h4>
+            <h4 class="text-base md:text-lg md:font-bold planName" id='arcadeName'>Arcade</h4>
             <p id="arcadePrice" class="my-[.2rem] text-slate-500 tracking-normal text-sm md:text-base">$9/mo</p>
             <h5 class="hidden text-xs font-bold freePlan" id="arcadeKind">2 months free</h5>
           </div>
         </div>
       </label>
-      <label for="advanced" class="block mt-3 md:w-full " id="">
+      <label for="advanced" class="block mt-3 md:w-full " id="advancePlan">
         <input type="radio" id="advanced" class="hidden peer plans" name="plan">
-          <div class="grid grid-cols-4 p-3 border-2 rounded-lg text-MarineBlue focus:outline-MarineBlue border-slate-300 md:flex-col md:justify-center md:items-start md:flex peer-checked:border-MarineBlue peer-checked:bg-Magnolia label">
+          <div class="grid grid-cols-4 p-3 border-2 rounded-lg text-MarineBlue focus:outline-MarineBlue border-slate-300 md:flex-col md:justify-center md:items-start md:flex label 
+        peer-checked:border-MarineBlue peer-checked:bg-Magnolia 
+ ">
             <img src="assets/images/icon-advanced.svg" alt="advanced icon" class="w-12 my-auto">
             <div class="col-span-3 md:mt-8 ">
-              <h4 class="text-base md:text-lg md:font-bold planName">Advanced</h4>
+              <h4 class="text-base md:text-lg md:font-bold planName" id='advanceName'>Advanced</h4>
               <p id="advancedPrice" class="my-[.2rem] text-slate-500 tracking-normal text-sm md:text-base">$12/mo</p>
               <h5 class="hidden text-xs font-bold freePlan" id="advancedKind">2 months free</h5>
             </div>
           </div>
       </label>
-      <label for="pro" class="block mt-3 md:w-full " id="">
+      <label for="pro" class="block mt-3 md:w-full " id="proPlan">
         <input type="radio" id="pro" class="hidden peer plans" name="plan">
-        <div class="grid grid-cols-4 p-3 border-2 rounded-lg text-MarineBlue focus:outline-MarineBlue border-slate-300 md:flex-col md:justify-center md:items-start md:flex peer-checked:border-MarineBlue peer-checked:bg-Magnolia label">
+        <div class="grid grid-cols-4 p-3 border-2 rounded-lg text-MarineBlue focus:outline-MarineBlue border-slate-300 md:flex-col md:justify-center md:items-start md:flex label 
+ peer-checked:border-MarineBlue peer-checked:bg-Magnolia 
+ ">
           <img src="assets/images/icon-pro.svg" alt="pro icon" class="w-12 my-auto">
           <div class="col-span-3 md:mt-8">
-            <h4 class="text-base md:text-lg md:font-bold planName">Pro</h4>
+            <h4 class="text-base md:text-lg md:font-bold planName" id="proName">Pro</h4>
             <p id="proPrice" class="my-[.2rem] text-slate-500 tracking-normal text-sm md:text-base">$15/mo</p>
             <h5 class="hidden text-xs font-bold freePlan" id="proKind">2 months free</h5>
           </div>
@@ -109,13 +115,13 @@ class UI {
           <!-- <input type="checkbox" class="peer" id="pick" name="pick_check"> -->
           <div class="flex items-center justify-between px-3 py-1 align-middle border-2 rounded-lg gap-x-3 peer-checked:border-MarineBlue focus:border-MarineBlue md:flex md:px-4 md:py-2 ">
             <div class="flex gap-x-4">
-              <input type="checkbox"  class="peer-checked:checked" id="service_inp">
+              <input type="checkbox"  class="peer-checked:checked addonCheck" id="service_inp">
               <div class="">
-                <h4 class="text-MarineBlue md:text-xl">Online service</h4>
+                <h4 class="text-MarineBlue md:text-xl addonName">Online service</h4>
                 <p class="text-sm font-medium text-slate-400 md:text-lg">Access to multiplayer games</p>
               </div>
             </div>
-            <p id="addOns-price_1" class="text-sm text-indigo-400"> +$1/mo</p>
+            <p id="addOns-price_1" class="text-sm text-indigo-400 addonPrice"> +$1/mo</p>
           </div>
         <!-- </label> -->
       </label>
@@ -124,13 +130,13 @@ class UI {
           <!-- <input type="checkbox" class="peer" id="pick" name="pick_check"> -->
           <div class="flex items-center justify-between px-3 py-1 align-middle border-2 rounded-lg gap-x-3 peer-checked:border-MarineBlue focus:border-MarineBlue md:flex md:px-4 md:py-2 ">
             <div class="flex gap-x-4">
-              <input type="checkbox"  class="peer-checked:checked" id="storage_inp">
+              <input type="checkbox"  class="peer-checked:checked addonCheck" id="storage_inp">
               <div class="">
-                <h4 class="text-MarineBlue md:text-xl">Larger storage</h4>
+                <h4 class="text-MarineBlue md:text-xl addonName">Larger storage</h4>
                 <p class="text-sm font-medium text-slate-400 md:text-lg">Extra 1TB of cloud save</p>
               </div>
             </div>
-            <p id="addOns-price_1" class="text-sm text-indigo-400"> +$2/mo</p>
+            <p id="addOns-price_1" class="text-sm text-indigo-400 addonPrice"> +$2/mo</p>
           </div>
         <!-- </label> -->
       </label>
@@ -139,13 +145,13 @@ class UI {
           <!-- <input type="checkbox" class="peer" id="pick" name="pick_check"> -->
           <div class="flex items-center justify-between px-3 py-1 align-middle border-2 rounded-lg gap-x-3 peer-checked:border-MarineBlue focus:border-MarineBlue md:flex md:px-4 md:py-2 ">
             <div class="flex gap-x-4">
-              <input type="checkbox"  class=" peer-checked:checked" id="customizable_inp">
+              <input type="checkbox"  class=" peer-checked:checked addonCheck" id="customizable_inp">
               <div class="">
-                <h4 class="text-base text-MarineBlue md:text-xl">Customizable profile</h4>
+                <h4 class="text-base text-MarineBlue md:text-xl addonName">Customizable profile</h4>
                 <p class="text-sm font-medium text-slate-400 md:text-lg">Custome theme on your profile</p>
               </div>
             </div>
-            <p id="addOns-price_1" class="text-sm text-indigo-400"> +$2/mo</p>
+            <p id="addOns-price_1" class="text-sm text-indigo-400 addonPrice"> +$2/mo</p>
           </div>
         <!-- </label> -->
       </label>
@@ -158,7 +164,7 @@ class UI {
     `;
   }
 
-  renderSummaryPage() {
+  renderSummaryPage(norm) {
     document.querySelector("#overall").innerHTML = `
     <div class=" mb-[2rem] md:mb-0  wrapper step-4">
     <h2 class="mt-4 text-3xl font-bold text-MarineBlue md:text-4xl">Finishing Up</h2>
@@ -166,19 +172,22 @@ class UI {
      <div class="p-4 bg-Magnolia text-MarineBlue ">
         <div class="flex items-center justify-between pb-3 border-b-2 border-slate-200">
           <div class="leading-none">
-            <h3>Arcade (Monthly)</h3>
-            <a href="#" class="font-thin underline text-slate-400">change</a>
+            <h3>${norm.planTitle} <span id="monthYear">(Monthly)</span></h3>
+            <a href="#" class="font-thin underline ztext-slate-400">change</a>
           </div>
-          <p>$9/mo</p>
+          <p>${norm.planPrice}</p>
         </div>
-        <div class="flex items-center justify-between mt-2">
-          <p class="text-slate-400">Online service</p>
-          <p class="font-light">+$1/mo</p>
-        </div>
-        <div class="flex items-center justify-between mt-6">
-          <p class="text-slate-400">Larger storage</p>
-          <p class="font-light">+$2/mo</p>
-        </div>
+      <div class="section">
+        
+      <div class="flex items-center justify-between mt-2">
+    <p class="text-slate-400">${norm.addonName}</p>
+    <p class="font-light">+$1/mo</p>
+  </div>
+  <div class="flex items-center justify-between mt-6">
+    <p class="text-slate-400">${norm.addonName}</p>
+    <p class="font-light">+$2/mo</p>
+  </div>
+ </div>
       </div>
     <div class="flex items-center justify-between px-4 mt-6">
       <p class="text-slate-400">Total (per month)</p>
@@ -208,3 +217,13 @@ class UI {
     `;
   }
 }
+    //   <div class="flex items-center justify-between mt-2">
+          // <p class="text-slate-400">${norm.addonName}</p>
+        //   <p class="font-light">+$1/mo</p>
+        // </div>
+        // <div class="flex items-center justify-between mt-6">
+        //   <p class="text-slate-400">${norm.addonName}</p>
+        //   <p class="font-light">+$2/mo</p>
+        // </div>
+    //  </div>
+//  peer-checked:border-MarineBlue peer-checked:bg-Magnolia 

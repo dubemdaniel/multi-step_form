@@ -50,6 +50,7 @@ nextButton.forEach(btn => {
       }
       currentCircle++;
     }
+    
   });
 });
 
@@ -128,3 +129,4 @@ toggleLable.addEventListener("click", () => {
     proKind.classList.add("hidden");
   }
 });
+console.log('e-tech my boss')

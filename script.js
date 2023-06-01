@@ -1,3 +1,9 @@
+
+
+  const ui = new UI();
+
+  const database = new Database();
+
 window.onload = () => {
   const pages = document.querySelectorAll(".wrapper");
 
@@ -7,11 +13,6 @@ window.onload = () => {
 
   let circles = document.querySelectorAll(".stp");
 
- 
-
-  const ui = new UI();
-
-  const storage = new Storage();
 
   const uiPages = [
     ui.renderInfoPage,
@@ -27,11 +28,11 @@ window.onload = () => {
 
   // this changes the ui according to the pages
 
-  const syncUI = (pageNo, circleNo) => {
+  const syncUI = (pageNo) => {
     circles.forEach((circle, index) => {
       if (index < pageNo) {
-        circle.className =
-          "flex items-center justify-center w-10 h-10 border-2 rounded-full md:m-auto md:w-12 md:h-12 stp bg-Magnolia text-MarineBlue";
+      circle.className =
+         "flex items-center justify-center w-10 h-10 border-2 rounded-full md:m-auto md:w-12 md:h-12 stp bg-Magnolia text-MarineBlue";
       } else {
         circle.className =
           "flex items-center justify-center w-10 h-10 border-2 rounded-full md:m-auto md:w-12 md:h-12 stp";
@@ -40,12 +41,25 @@ window.onload = () => {
 
     // this shows the html to the UI
     const showPage = uiPages[pageNo - 1];
-    showPage();
+    showPage(database.getData());
 
     if (currentPage === 2) {
       enableTogable();
-      RenderPlan()
+      selectArcade()
+      selectAdvance()
+      selectPro()
+      // RenderPlan()
       // enablePlan()
+    }
+
+    if(currentPage === 3) {
+      addon()
+    }
+
+    if(currentPage === 4){
+      console.log(database?.getData());
+      // ui.renderSummaryPage(database.getData())
+      
     }
 
     nextButton = document.querySelector(".next_btn");
@@ -176,51 +190,194 @@ const enableTogable = () => {
 
 };
 
- const RenderPlan = () => {
-  const labels = document.querySelectorAll('.label')
+const selectArcade = () => {
+  const arcadeLabel = document.getElementById('arcadePlan')
 
-  labels.forEach(label => {
-    label.addEventListener('click', (e) => {
+  arcadeLabel.addEventListener('click', () => {
+    // e.preventDefault()
+    const arcadeName = document.getElementById('arcadeName').textContent
+    
+    const arcadePrice = document.getElementById('arcadePrice').textContent
 
-      console.log('normally, u dey mad')
+    let arcadeKind = document.getElementById('arcadeKind')
+    
+    let arcadeKind2 = document.getElementById('arcadeKind').textContent
 
-      const planName = e.target.children[1].children[0].textContent
-      const planPrice = e.target.children[1].children[1].textContent
-
-      console.log(`${planName} : ${planPrice}`)
+    if(arcadeKind.classList.contains('hidden')){
       
-      const discount = e.target.children[1].children[2].textContent
-
-      let freePlan = document.querySelector('.freePlan');
-
-      // console.log(discount)
-
-      if (freePlan.classList.contains('hidden')){
-        console.log('ur fada')
-      } else {
-        console.log('ur mama')
-        console.log(discount)
+        console.log(arcadeName, arcadePrice)
         
-      }
-      storage.setData()
-    })
-  });
- }
- 
+        const data = {
+          planTitle : arcadeName,
+          planPrice : arcadePrice,
+        }
+        
+        database.setData(data)
   
+      }else {
+        
+        arcadeKind = arcadeKind2
 
-// const enablePlan = () => {
-//   const toggle = document.getElementById("monthYear");
-//   const plans = document.querySelectorAll(".plans")
-//   const planName = document.querySelectorAll(".planName")
-//   plans.forEach(plan => plan.addEventListener)
-//   const norms = Array.from(plans).find(plan => plan.checked)
-//   // let isChecked = false
-//   plans.forEach(plan => {
-//     if(plan.checked && toggle.checked){
-//       // isChecked = true
-//   console.log(norms)
-//     }
-//   });
+        console.log(arcadeName, arcadePrice, arcadeKind)
 
-// }
+        const data = {
+          planTitle : arcadeName,
+          planPrice : arcadePrice,
+        }
+
+      database.updateData('isPlanYearly', true)
+      database.setData(data)
+    }
+      
+      console.log(database.getData());
+      
+  })
+
+}
+
+
+
+
+const selectAdvance = () => {
+  const advanceLabel = document.getElementById('advancePlan')
+
+  advanceLabel.addEventListener('click', () => {
+    const advanceName = document.getElementById('advanceName').textContent
+
+    
+    const advancePrice = document.getElementById('advancedPrice').textContent
+
+    let advanceKind = document.getElementById('advancedKind')
+
+    let advanceKind2 = document.getElementById('advancedKind').textContent
+
+    if(advanceKind.classList.contains('hidden')){
+      
+      console.log(advanceName, advancePrice)
+      
+      const data = {
+        planTitle : advanceName,
+        planPrice : advancePrice,
+        isPlanYearly : true
+
+      }
+      
+      database.setData(data)
+
+    }else {
+      
+      advanceKind = advanceKind2
+
+      console.log(advanceName, advancePrice, advanceKind)
+
+      const data = {
+        planTitle : advanceName,
+        planPrice : advancePrice,
+        isPlanYearly : true
+      }
+
+    database.setData(data)
+  }
+    
+    console.log(database.getData());
+    console.log(database.getSingleData('isPlanYearly'));
+  })
+  
+}
+
+
+
+
+const selectPro = () => {
+  const proLabel = document.getElementById('proPlan')
+
+  proLabel.addEventListener('click', () => {
+    const proName = document.getElementById('proName').textContent
+    
+    const proPrice = document.getElementById('proPrice').textContent
+
+    let proKind = document.getElementById('proKind')
+    
+    let proKind2 = document.getElementById('proKind').textContent
+
+     if(proKind.classList.contains('hidden')){
+      
+      console.log(proName, proPrice)
+
+      const data = {
+        planTitle : proName,
+        planPrice : proPrice,
+      }
+      
+      database.setData(data)
+
+   }else {
+     
+    proKind = proKind2
+
+     console.log(proName, proPrice, proKind)
+
+     
+     const data = {
+      planTitle : proName,
+      planPrice : proPrice,
+      isPlanYearly : true,
+      monthYear : 'Yearly'
+    }
+   }
+  })
+  
+}
+
+
+  const addon = () => {
+
+    const addonCheck = document.querySelectorAll('.addonCheck')
+    
+    addonCheck.forEach(check => {
+      check.addEventListener('change', (e) => {
+        const addonNames = check.parentElement.firstElementChild.nextElementSibling.firstElementChild.textContent;
+         
+        const addonPrices = check.parentElement.nextElementSibling.textContent
+
+        
+
+
+        if (check.checked) {
+          console.log('it is checked');
+          console.log(database.getData());
+          const addonArr = database.getSingleData('addon')
+
+          console.log(addonArr);
+
+          const index = addonArr.findIndex(item => item.name === addonNames);
+          
+          if(addonArr.name !== addonNames){
+            console.log('everybody papa')
+            addonArr.push({name: addonNames, price: addonPrices})
+          }else{
+            console.log('everybody mama')
+          }   
+        }
+        else{
+          console.log('it is not checked at all')
+        }
+      })
+    })
+  }
+          
+
+        // database.updateData('addonName', addonName)
+        // database.updateData('addonPrice', addonPrice)
+
+        // database.setData(addonName)
+        // let section = document.querySelector('.section')
+        
+
+      // database.setData(data)
+      // if (database.getData().isPlanYearly === true){
+      //   console.log('their papa')
+      //   const MonthYearBatch = getElementById('monthYear')
+        
+      //   MonthYearBatch.innerText = 'yearly'
+      // }
