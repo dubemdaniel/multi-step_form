@@ -237,7 +237,6 @@ const selectArcade = () => {
 
 
 
-
 const selectAdvance = () => {
   const advanceLabel = document.getElementById('advancePlan')
 
@@ -284,7 +283,6 @@ const selectAdvance = () => {
   })
   
 }
-
 
 
 
@@ -339,9 +337,6 @@ const selectPro = () => {
         const addonNames = check.parentElement.firstElementChild.nextElementSibling.firstElementChild.textContent;
          
         const addonPrices = check.parentElement.nextElementSibling.textContent
-
-        
-
 
         if (check.checked) {
           console.log('it is checked');
