@@ -228,13 +228,11 @@ const selectArcade = () => {
       database.updateData('isPlanYearly', true)
       database.setData(data)
     }
-      
       console.log(database.getData());
       
   })
 
 }
-
 
 
 const selectAdvance = () => {
