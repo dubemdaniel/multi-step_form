@@ -366,11 +366,3 @@ const selectPro = () => {
         // database.setData(addonName)
         // let section = document.querySelector('.section')
         
-
-      // database.setData(data)
-      // if (database.getData().isPlanYearly === true){
-      //   console.log('their papa')
-      //   const MonthYearBatch = getElementById('monthYear')
-        
-      //   MonthYearBatch.innerText = 'yearly'
-      // }
