@@ -3,7 +3,7 @@ class Database{
         this.data = {
             planTitle : '',
             planPrice : '',
-            addon : [],
+            addon : '',
             isPlanYearly : false, 
             monthYear : '',
         }

@@ -331,26 +331,25 @@ const selectPro = () => {
     const addonCheck = document.querySelectorAll('.addonCheck')
     
     addonCheck.forEach(check => {
-      check.addEventListener('change', (e) => {
+      check.addEventListener('change', () => {
         const addonNames = check.parentElement.firstElementChild.nextElementSibling.firstElementChild.textContent;
          
         const addonPrices = check.parentElement.nextElementSibling.textContent
 
         if (check.checked) {
-          console.log('it is checked');
+          let addonArr = database.getSingleData('addon')
+          console.log('it is checked')
+              
+          addonArr = []
+
+          addonArr.push({name: addonNames, price: addonPrices})
+
+          console.log(addonArr)
+
+          database.updateData('addon', addonArr)
+           
           console.log(database.getData());
-          const addonArr = database.getSingleData('addon')
 
-          console.log(addonArr);
-
-          const index = addonArr.findIndex(item => item.name === addonNames);
-          
-          if(addonArr.name !== addonNames){
-            console.log('everybody papa')
-            addonArr.push({name: addonNames, price: addonPrices})
-          }else{
-            console.log('everybody mama')
-          }   
         }
         else{
           console.log('it is not checked at all')
@@ -358,11 +357,15 @@ const selectPro = () => {
       })
     })
   }
+
+          // console.log(addonArr);
+
+          // const index = addonArr.findIndex(item => item.name === addonNames);
           
-
-        // database.updateData('addonName', addonName)
-        // database.updateData('addonPrice', addonPrice)
-
-        // database.setData(addonName)
-        // let section = document.querySelector('.section')
-        
+          // for (let i = 0; i < addonArr.length; i++) {
+          //   const element = addonArr[i];
+          //   console.log(element)
+          //   if(element.name !== addonNames){
+          //     console.log("ur papa")
+          //   }
+            
