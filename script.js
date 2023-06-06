@@ -331,17 +331,19 @@ const selectPro = () => {
     const addonCheck = document.querySelectorAll('.addonCheck')
     
     addonCheck.forEach(check => {
-      check.addEventListener('change', () => {
+      check.addEventListener('change', (e) => {
+        e.preventDefault()
         const addonNames = check.parentElement.firstElementChild.nextElementSibling.firstElementChild.textContent;
          
         const addonPrices = check.parentElement.nextElementSibling.textContent
+        
+        let addonArr = database.getSingleData('addon')
+        
+        // addonArr = []
 
         if (check.checked) {
-          let addonArr = database.getSingleData('addon')
           console.log('it is checked')
               
-          addonArr = []
-
           addonArr.push({name: addonNames, price: addonPrices})
 
           console.log(addonArr)
@@ -353,8 +355,11 @@ const selectPro = () => {
         }
         else{
           console.log('it is not checked at all')
+          addonArr = addonArr.filter(el => el.name !== addonNames);
+          database.updateData('addon', addonArr)
+          console.log(addonArr)
         }
-      })
+      })     
     })
   }
 
