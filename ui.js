@@ -1,6 +1,7 @@
 class UI {
   constructor() {
-    this.wrapper = document.querySelector("#overall");
+    // this.wrapper = document.querySelector("#overall");
+    this.section = document.querySelector('.section')
   }
 
   renderInfoPage() {
@@ -155,7 +156,7 @@ class UI {
           </div>
         <!-- </label> -->
       </label>
-       <footer class="fixed inset-x-0 bottom-0 flex justify-between px-4 py-3 align-middle bg-white md:relative md:bottom-0 md:mt-36 shadow-myShadow md:shadow-none md:-mb-8 md:pt-8"  >
+       <footer class="fixed inset-x-0 bottom-0 flex justify-between px-4 py-3 align-middle bg-white md:relative md:bottom-0 md:mt-40 shadow-myShadow md:shadow-none md:-mb-8 "  >
         <button class="px-3 py-2 text-md text-slate-500 md:px-4 md:py-2 md:text-xl back_btn" id="">Go Back</button>
         <button class="px-3 py-2 mr-2 font-medium text-white rounded-md text-md bg-MarineBlue md:px-4 md:py-2 md:text-xl next_btn" id="" type="submit"> Next Step </button>
       </footer>
@@ -173,21 +174,13 @@ class UI {
         <div class="flex items-center justify-between pb-3 border-b-2 border-slate-200">
           <div class="leading-none">
             <h3>${norm.planTitle} <span id="monthYear">(Monthly)</span></h3>
-            <a href="#" class="font-thin underline ztext-slate-400">change</a>
+            <a href="#" class="font-thin underline text-slate-400">change</a>
           </div>
           <p>${norm.planPrice}</p>
         </div>
-      <div class="section">
-        
-      <div class="flex items-center justify-between mt-2">
-    <p class="text-slate-400">${norm.addonName}</p>
-    <p class="font-light">+$1/mo</p>
-  </div>
-  <div class="flex items-center justify-between mt-6">
-    <p class="text-slate-400">${norm.addonName}</p>
-    <p class="font-light">+$2/mo</p>
-  </div>
- </div>
+      <div id="section">
+       <p id="taa"></p>
+      </div>
       </div>
     <div class="flex items-center justify-between px-4 mt-6">
       <p class="text-slate-400">Total (per month)</p>
@@ -227,3 +220,16 @@ class UI {
         // </div>
     //  </div>
 //  peer-checked:border-MarineBlue peer-checked:bg-Magnolia 
+
+
+
+
+ 
+          // <div class="flex items-center justify-between mt-2">
+          //   <p class="text-slate-400">${norm.addon}</p>
+          //   <p class="font-light">+$1/mo</p>
+          // </div>
+          // <div class="flex items-center justify-between mt-6">
+          //   <p class="text-slate-400">${norm.addonName}</p>
+          //   <p class="font-light">+$2/mo</p>
+          // </div>

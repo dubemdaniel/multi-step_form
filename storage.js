@@ -6,7 +6,9 @@ class Database{
             addon : [],
             isPlanYearly : false, 
             monthYear : '',
-        }
+        };
+
+        this.section = document.getElementById('section')
    }
 
    setData(data){
@@ -24,5 +26,8 @@ class Database{
    getSingleData (key) {
     return this.data[key]
 
+   }
+   renderAddonItems(){
+       this.section.innerHTML = `kdjfkjdlkajldjfldjfaljdalkjglakjflksfj`
    }
 }

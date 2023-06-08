@@ -54,6 +54,7 @@ window.onload = () => {
 
     if(currentPage === 3) {
       addon()
+      // taa()
     }
 
     if(currentPage === 4){
@@ -282,8 +283,6 @@ const selectAdvance = () => {
   
 }
 
-
-
 const selectPro = () => {
   const proLabel = document.getElementById('proPlan')
 
@@ -340,6 +339,7 @@ const selectPro = () => {
         let addonArr = database.getSingleData('addon')
         
         // addonArr = []
+        // let taa = document.getElementById('taa')
 
         if (check.checked) {
           console.log('it is checked')
@@ -351,7 +351,20 @@ const selectPro = () => {
           database.updateData('addon', addonArr)
            
           console.log(database.getData());
+                   
 
+          // database.renderAddonItems()
+
+          // const taa = () => {
+            // const element = document.getElementById("taa");
+            const element = database.renderAddonItems()
+            if (element !== null) {
+              element.innerHTML = "New content";
+            } else {
+              console.log("Element not found.");
+            }
+  
+          // }
         }
         else{
           console.log('it is not checked at all')
@@ -359,10 +372,16 @@ const selectPro = () => {
           database.updateData('addon', addonArr)
           console.log(addonArr)
         }
+       
       })     
+     
     })
-  }
 
+   
+    
+  }
+  
+ 
           // console.log(addonArr);
 
           // const index = addonArr.findIndex(item => item.name === addonNames);
