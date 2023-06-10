@@ -3,12 +3,13 @@ class Database{
         this.data = {
             planTitle : '',
             planPrice : '',
+            planPriceUnit : '',
             addon : [],
             isPlanYearly : false, 
             monthYear : '',
         };
 
-        this.section = document.getElementById('section')
+        // this.taa = document.getElementById('taa')
    }
 
    setData(data){
@@ -27,7 +28,5 @@ class Database{
     return this.data[key]
 
    }
-   renderAddonItems(){
-       this.section.innerHTML = `kdjfkjdlkajldjfldjfaljdalkjglakjflksfj`
-   }
+
 }

@@ -1,5 +1,4 @@
 
-
   const ui = new UI();
 
   const database = new Database();
@@ -42,6 +41,7 @@ window.onload = () => {
     // this shows the html to the UI
     const showPage = uiPages[pageNo - 1];
     showPage(database.getData());
+    // showPage()
 
     if (currentPage === 2) {
       enableTogable();
@@ -59,6 +59,9 @@ window.onload = () => {
 
     if(currentPage === 4){
       console.log(database?.getData());
+      addonSummary()
+      // database.renderAddonItems()
+      // ui.renderSectionItems()
       // ui.renderSummaryPage(database.getData())
       
     }
@@ -155,28 +158,37 @@ const enableTogable = () => {
 
   toggleLable.addEventListener("click", () => {
     const toggle = document.getElementById("monthYear");
-    const arcade = document.getElementById("arcadePrice");
-    const advanced = document.getElementById("advancedPrice");  
-    const pro = document.getElementById("proPrice");
+    const arcade = document.getElementById("arcadePriceWrapper");
+    const advanced = document.getElementById("advancedPriceWrapper");  
+    const pro = document.getElementById("proPriceWrapper");
     const arcadeKind = document.getElementById("arcadeKind");
     const advancedKind = document.getElementById("advancedKind");
     const proKind = document.getElementById("proKind");
     
-    // console.log(toggle);
+
+    // const addon1 = getElementById('addOns-price_1')
     
     if (toggle.checked) {
       // console.log("checkBox is checked");
-      arcade.innerText = "$90/yr";
-      advanced.innerText = "$120/yr";
-      pro.innerText = "$150/yr";
+      arcade.innerHTML = `<span id="arcadePriceUnit">90</span>/<span class="MonthYearUnit">yr</span>`;
+      
+      advanced.innerHTML = `  <span id="advancedPriceUnit">120</span>/<span class="MonthYearUnit">yr</span>`;
+      
+      pro.innerHTML = `  <span id="proPriceUnit">150</span>/<span class="MonthYearUnit">yr</span>`;
+      
       arcadeKind.classList.remove("hidden");
       advancedKind.classList.remove("hidden");
       proKind.classList.remove("hidden");
+
+      // addon1.innerText = 'kjdiuohjuhj'
     } else {
       // console.log("checkBox is not checked");
-      arcade.innerText = "$9/mo";
-      advanced.innerText = "$12/mo";
-      pro.innerText = "$15/mo";
+      arcade.innerHTML = `<span id="arcadePriceUnit">9</span>/<span class="MonthYearUnit">mo</span>`;
+      
+      advanced.innerHTML = `  <span id="advancedPriceUnit">12</span>/<span class="MonthYearUnit">mo</span>`;
+      
+      pro.innerHTML = `  <span id="proPriceUnit">15</span>/<span class="MonthYearUnit">mo</span>`;
+      
       arcadeKind.classList.add("hidden");
       advancedKind.classList.add("hidden");
       proKind.classList.add("hidden");
@@ -193,12 +205,14 @@ const enableTogable = () => {
 
 const selectArcade = () => {
   const arcadeLabel = document.getElementById('arcadePlan')
+  
+  const arcadePriceUnit = document.querySelector('.monthYearUnit').textContent
 
   arcadeLabel.addEventListener('click', () => {
     // e.preventDefault()
     const arcadeName = document.getElementById('arcadeName').textContent
     
-    const arcadePrice = document.getElementById('arcadePrice').textContent
+    const arcadePrice = document.getElementById('arcadePriceUnit').textContent
 
     let arcadeKind = document.getElementById('arcadeKind')
     
@@ -211,9 +225,11 @@ const selectArcade = () => {
         const data = {
           planTitle : arcadeName,
           planPrice : arcadePrice,
+          planPriceUnit : arcadePriceUnit
         }
         
         database.setData(data)
+        
   
       }else {
         
@@ -224,9 +240,9 @@ const selectArcade = () => {
         const data = {
           planTitle : arcadeName,
           planPrice : arcadePrice,
+          planPriceUnit : 'yr'
         }
-
-      database.updateData('isPlanYearly', true)
+      // database.updateData('isPlanYearly', true)
       database.setData(data)
     }
       console.log(database.getData());
@@ -238,12 +254,13 @@ const selectArcade = () => {
 
 const selectAdvance = () => {
   const advanceLabel = document.getElementById('advancePlan')
+  
+  const advancePriceUnit = document.querySelector('.monthYearUnit').textContent
 
   advanceLabel.addEventListener('click', () => {
     const advanceName = document.getElementById('advanceName').textContent
 
-    
-    const advancePrice = document.getElementById('advancedPrice').textContent
+    const advancePrice = document.getElementById('advancedPriceUnit').textContent
 
     let advanceKind = document.getElementById('advancedKind')
 
@@ -256,7 +273,7 @@ const selectAdvance = () => {
       const data = {
         planTitle : advanceName,
         planPrice : advancePrice,
-        isPlanYearly : true
+        planPriceUnit : advancePriceUnit
 
       }
       
@@ -271,12 +288,12 @@ const selectAdvance = () => {
       const data = {
         planTitle : advanceName,
         planPrice : advancePrice,
-        isPlanYearly : true
+        planPriceUnit : 'yr'
       }
 
     database.setData(data)
   }
-    
+  
     console.log(database.getData());
     console.log(database.getSingleData('isPlanYearly'));
   })
@@ -285,11 +302,13 @@ const selectAdvance = () => {
 
 const selectPro = () => {
   const proLabel = document.getElementById('proPlan')
+  
+  const proPriceUnit = document.querySelector('.monthYearUnit').textContent
 
   proLabel.addEventListener('click', () => {
     const proName = document.getElementById('proName').textContent
     
-    const proPrice = document.getElementById('proPrice').textContent
+    const proPrice = document.getElementById('proPriceUnit').textContent
 
     let proKind = document.getElementById('proKind')
     
@@ -302,6 +321,7 @@ const selectPro = () => {
       const data = {
         planTitle : proName,
         planPrice : proPrice,
+        planPriceUnit : proPriceUnit
       }
       
       database.setData(data)
@@ -316,10 +336,14 @@ const selectPro = () => {
      const data = {
       planTitle : proName,
       planPrice : proPrice,
-      isPlanYearly : true,
-      monthYear : 'Yearly'
+      planPriceUnit : 'yr'
+      
     }
+    database.setData(data)
+
    }
+   console.log(database.getData());
+   
   })
   
 }
@@ -328,13 +352,38 @@ const selectPro = () => {
   const addon = () => {
 
     const addonCheck = document.querySelectorAll('.addonCheck')
+    let addonMonthYearUnit = document.querySelectorAll('.addonMonthYearUnit')
+    let addonMonthYearDigit1 = document.querySelector('.addonMonthYearDigit1')
+    let addonMonthYearDigit2 = document.querySelector('.addonMonthYearDigit2')
+    let addonMonthYearDigit3 = document.querySelector('.addonMonthYearDigit3')
+
+    addonMonthYearUnit.forEach(my => {
+      if(database.getSingleData('planPriceUnit') === 'yr'){
+        console.log('shebedishebedishebedi')
+        my.innerText = 'yr'
+
+        addonMonthYearDigit1.innerText = '10'
+        addonMonthYearDigit2.innerText = '20'
+        addonMonthYearDigit3.innerText = '20'
+      }else {
+        my.innertext = 'mo'
+
+        addonMonthYearDigit1.innerText = '1'
+        addonMonthYearDigit2.innerText = '2'
+        addonMonthYearDigit3.innerText = '2'
+      }
+    })
     
     addonCheck.forEach(check => {
       check.addEventListener('change', (e) => {
         e.preventDefault()
         const addonNames = check.parentElement.firstElementChild.nextElementSibling.firstElementChild.textContent;
          
-        const addonPrices = check.parentElement.nextElementSibling.textContent
+        const addonPrices = check.parentElement.nextElementSibling.firstElementChild.textContent
+
+        // let addonPrices = document.querySelector('.addonMonthYearDigit').textContent
+
+        // addonPrices = addonPrices.e.target
         
         let addonArr = database.getSingleData('addon')
         
@@ -355,32 +404,57 @@ const selectPro = () => {
 
           // database.renderAddonItems()
 
-          // const taa = () => {
-            // const element = document.getElementById("taa");
-            const element = database.renderAddonItems()
-            if (element !== null) {
-              element.innerHTML = "New content";
-            } else {
-              console.log("Element not found.");
-            }
-  
-          // }
+         
         }
         else{
           console.log('it is not checked at all')
           addonArr = addonArr.filter(el => el.name !== addonNames);
           database.updateData('addon', addonArr)
           console.log(addonArr)
-        }
-       
-      })     
-     
-    })
-
-   
-    
+        }      
+      })         
+    })   
   }
   
+  const addonSummary = () => {
+
+    const section = document.getElementById('section')
+    
+    let addonArr = database.getSingleData('addon')
+    
+
+    database.getSingleData('addon').forEach(item => {
+
+      const planPriceUnit = database.getSingleData('planPriceUnit')
+      
+      const div = document.createElement('div')
+      
+      div.classList.add('flex', 'items-center', 'justify-between', 'mt-4')
+      
+      div.innerHTML = `
+      <p class="text-slate-400">${item.name}</p>
+      <p class="font-light" id="unitPrice">$${item.price}/${planPriceUnit === 'yr' ? 'yr' : 'mo'}</p>`
+
+      section.appendChild(div)
+    })
+    let planPrice = parseInt(database.getSingleData('planPrice'))
+
+
+    const totalPrice = addonArr.reduce((sum, item) => {
+      
+
+      if (typeof(item.price) == "string"){
+
+        let str = item.price;
+        let num = parseInt(str);
+        return sum + num
+      }
+    }, 0);
+    console.log(addonArr)
+    console.log(totalPrice)
+    console.log(`total = ${totalPrice + planPrice}`)
+    
+  }
  
           // console.log(addonArr);
 
@@ -393,3 +467,13 @@ const selectPro = () => {
           //     console.log("ur papa")
           //   }
             
+ // const taa = () => {
+            // const element = document.getElementById("taa");
+            // const element = database.renderAddonItems()
+            // if (element !== null) {
+            //   element.innerHTML = "New content";
+            // } else {
+            //   console.log("Element not found.");
+            // }
+  
+          // }

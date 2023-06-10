@@ -1,8 +1,9 @@
 class UI {
   constructor() {
     // this.wrapper = document.querySelector("#overall");
-    this.section = document.querySelector('.section')
+    this.section = document.getElementById('section')
   }
+  
 
   renderInfoPage() {
     document.querySelector("#overall").innerHTML = `
@@ -49,12 +50,15 @@ class UI {
       <label for="arcade" class="block mt-3 md:w-full " id="arcadePlan">
         <input type="radio" id="arcade" class="hidden peer plans" name="plan" checked>
         <div class="grid grid-cols-4 p-3 border-2 rounded-lg text-MarineBlue border-slate-300 md:flex-col md:justify-center md:flex md:items-startlabel 
- peer-checked:border-MarineBlue peer-checked:bg-Magnolia 
- ">
+        peer-checked:border-MarineBlue peer-checked:bg-Magnolia">
           <img src="assets/images/icon-arcade.svg" alt="arcade icon" class="w-12 my-auto">
           <div class="col-span-3 md:mt-8">
             <h4 class="text-base md:text-lg md:font-bold planName" id='arcadeName'>Arcade</h4>
-            <p id="arcadePrice" class="my-[.2rem] text-slate-500 tracking-normal text-sm md:text-base">$9/mo</p>
+            <p id="arcadePrice" class="my-[.2rem] text-slate-500 tracking-normal text-sm md:text-base">$
+              <span id="arcadePriceWrapper">
+                 <span id="arcadePriceUnit">9</span>/<span class="monthYearUnit">mo</span>
+              </span>
+            </p>
             <h5 class="hidden text-xs font-bold freePlan" id="arcadeKind">2 months free</h5>
           </div>
         </div>
@@ -67,7 +71,11 @@ class UI {
             <img src="assets/images/icon-advanced.svg" alt="advanced icon" class="w-12 my-auto">
             <div class="col-span-3 md:mt-8 ">
               <h4 class="text-base md:text-lg md:font-bold planName" id='advanceName'>Advanced</h4>
-              <p id="advancedPrice" class="my-[.2rem] text-slate-500 tracking-normal text-sm md:text-base">$12/mo</p>
+              <p id="advancedPrice" class="my-[.2rem] text-slate-500 tracking-normal text-sm md:text-base">$
+                <span id="advancedPriceWrapper">
+                   <span id="advancedPriceUnit">12</span>/<span class="monthYearUnit">mo</span>
+                </span>
+              </p>
               <h5 class="hidden text-xs font-bold freePlan" id="advancedKind">2 months free</h5>
             </div>
           </div>
@@ -80,7 +88,11 @@ class UI {
           <img src="assets/images/icon-pro.svg" alt="pro icon" class="w-12 my-auto">
           <div class="col-span-3 md:mt-8">
             <h4 class="text-base md:text-lg md:font-bold planName" id="proName">Pro</h4>
-            <p id="proPrice" class="my-[.2rem] text-slate-500 tracking-normal text-sm md:text-base">$15/mo</p>
+            <p id="proPrice" class="my-[.2rem] text-slate-500 tracking-normal text-sm md:text-base">$
+              <span id="proPriceWrapper">
+                 <span id="proPriceUnit">15</span>/<span class="monthYearUnit">mo</span>
+              </span>
+            </p>
             <h5 class="hidden text-xs font-bold freePlan" id="proKind">2 months free</h5>
           </div>
         </div>
@@ -122,7 +134,7 @@ class UI {
                 <p class="text-sm font-medium text-slate-400 md:text-lg">Access to multiplayer games</p>
               </div>
             </div>
-            <p id="addOns-price_1" class="text-sm text-indigo-400 addonPrice"> +$1/mo</p>
+            <p id="addOns-price_1" class="text-sm text-indigo-400 addonPrice"> +$<span class="addonMonthYearDigit1">1</span>/<span class="addonMonthYearUnit">mo</span></p>
           </div>
         <!-- </label> -->
       </label>
@@ -137,7 +149,7 @@ class UI {
                 <p class="text-sm font-medium text-slate-400 md:text-lg">Extra 1TB of cloud save</p>
               </div>
             </div>
-            <p id="addOns-price_1" class="text-sm text-indigo-400 addonPrice"> +$2/mo</p>
+            <p id="addOns-price_1" class="text-sm text-indigo-400 addonPrice"> +$<span class="addonMonthYearDigit2">2</span>/<span class="addonMonthYearUnit">mo</span></p>
           </div>
         <!-- </label> -->
       </label>
@@ -152,7 +164,7 @@ class UI {
                 <p class="text-sm font-medium text-slate-400 md:text-lg">Custome theme on your profile</p>
               </div>
             </div>
-            <p id="addOns-price_1" class="text-sm text-indigo-400 addonPrice"> +$2/mo</p>
+            <p id="addOns-price_1" class="text-sm text-indigo-400 addonPrice"> +$<span class="addonMonthYearDigit3">2</span>/<span class="addonMonthYearUnit">mo</span></p>
           </div>
         <!-- </label> -->
       </label>
@@ -176,7 +188,7 @@ class UI {
             <h3>${norm.planTitle} <span id="monthYear">(Monthly)</span></h3>
             <a href="#" class="font-thin underline text-slate-400">change</a>
           </div>
-          <p>${norm.planPrice}</p>
+          <p>$${norm.planPrice}/${norm.planPriceUnit}</p>
         </div>
       <div id="section">
        <p id="taa"></p>
@@ -209,6 +221,12 @@ class UI {
    </div>
     `;
   }
+
+  // renderSectionItems(){
+  //   this.section.innerHTML = `fsfdg`
+    
+  // }
+
 }
     //   <div class="flex items-center justify-between mt-2">
           // <p class="text-slate-400">${norm.addonName}</p>
@@ -233,3 +251,17 @@ class UI {
           //   <p class="text-slate-400">${norm.addonName}</p>
           //   <p class="font-light">+$2/mo</p>
           // </div>
+
+          // let addonMonthYearDigit1 = document.querySelectorAll('.addonMonthYearDigit1')
+// let addonMonthYearDigit2 = document.querySelectorAll('.addonMonthYearDigit2')
+// let addonMonthYearDigit3 = document.querySelectorAll('.addonMonthYearDigit3')
+
+
+        // addonMonthYearDigit1.innerText = '10'
+        // addonMonthYearDigit2.innerText = '20'
+        // addonMonthYearDigit3.innerText = '20'
+
+
+        // addonMonthYearDigit1.innerText = '1'
+        // addonMonthYearDigit2.innerText = '2'
+        // addonMonthYearDigit3.innerText = '2'
