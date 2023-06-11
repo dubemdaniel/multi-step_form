@@ -42,6 +42,9 @@ window.onload = () => {
     const showPage = uiPages[pageNo - 1];
     showPage(database.getData());
 
+    // if (currentPage === 1){
+    //   validate()
+    // }
     if (currentPage === 2) {
       enableTogable();
       selectArcade()
@@ -83,7 +86,6 @@ window.onload = () => {
       currentPage++;
       currentCirle++;
       syncUI(currentPage, currentCirle);
-      // enablePlan()
     }
 
     // first we increase the current page
@@ -408,8 +410,6 @@ const selectPro = () => {
       })         
     })   
   }
-
-  !nightFood ? soakGarri : sleep
 
   
   const Summary = () => {

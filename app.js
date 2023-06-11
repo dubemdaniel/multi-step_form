@@ -1,3 +1,5 @@
+// first file , but is now invalid,... go to script.js file for a better code
+
 const pages = document.querySelectorAll(".wrapper");
 
 const prevButton = document.querySelectorAll(".back_btn");
