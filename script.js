@@ -41,28 +41,22 @@ window.onload = () => {
     // this shows the html to the UI
     const showPage = uiPages[pageNo - 1];
     showPage(database.getData());
-    // showPage()
 
     if (currentPage === 2) {
       enableTogable();
       selectArcade()
       selectAdvance()
       selectPro()
-      // RenderPlan()
-      // enablePlan()
+ 
     }
 
     if(currentPage === 3) {
       addon()
-      // taa()
     }
 
     if(currentPage === 4){
       console.log(database?.getData());
-      addonSummary()
-      // database.renderAddonItems()
-      // ui.renderSectionItems()
-      // ui.renderSummaryPage(database.getData())
+      Summary()
       
     }
 
@@ -207,8 +201,12 @@ const selectArcade = () => {
   const arcadeLabel = document.getElementById('arcadePlan')
   
   const arcadePriceUnit = document.querySelector('.monthYearUnit').textContent
+  const arcadeInput = document.getElementById('arcade')
+  
+  // const arcadeInput = document.getElementById('arcade')
 
   arcadeLabel.addEventListener('click', () => {
+    
     // e.preventDefault()
     const arcadeName = document.getElementById('arcadeName').textContent
     
@@ -352,6 +350,7 @@ const selectPro = () => {
   const addon = () => {
 
     const addonCheck = document.querySelectorAll('.addonCheck')
+    
     let addonMonthYearUnit = document.querySelectorAll('.addonMonthYearUnit')
     let addonMonthYearDigit1 = document.querySelector('.addonMonthYearDigit1')
     let addonMonthYearDigit2 = document.querySelector('.addonMonthYearDigit2')
@@ -381,15 +380,9 @@ const selectPro = () => {
          
         const addonPrices = check.parentElement.nextElementSibling.firstElementChild.textContent
 
-        // let addonPrices = document.querySelector('.addonMonthYearDigit').textContent
-
-        // addonPrices = addonPrices.e.target
         
         let addonArr = database.getSingleData('addon')
         
-        // addonArr = []
-        // let taa = document.getElementById('taa')
-
         if (check.checked) {
           console.log('it is checked')
               
@@ -400,10 +393,9 @@ const selectPro = () => {
           database.updateData('addon', addonArr)
            
           console.log(database.getData());
-                   
 
-          // database.renderAddonItems()
-
+           check.parentElement.parentElement.classList.add('border-MarineBlue', 'bg-Magnolia')
+          
          
         }
         else{
@@ -411,21 +403,28 @@ const selectPro = () => {
           addonArr = addonArr.filter(el => el.name !== addonNames);
           database.updateData('addon', addonArr)
           console.log(addonArr)
+          check.parentElement.parentElement.classList.remove('border-MarineBlue', 'bg-Magnolia')
         }      
       })         
     })   
   }
+
+  !nightFood ? soakGarri : sleep
+
   
-  const addonSummary = () => {
+  const Summary = () => {
 
     const section = document.getElementById('section')
     
     let addonArr = database.getSingleData('addon')
     
+    const totalWrapper = document.querySelector('.totalWrapper')
+
+    const planPriceUnit = database.getSingleData('planPriceUnit')
+
 
     database.getSingleData('addon').forEach(item => {
 
-      const planPriceUnit = database.getSingleData('planPriceUnit')
       
       const div = document.createElement('div')
       
@@ -437,12 +436,12 @@ const selectPro = () => {
 
       section.appendChild(div)
     })
+    
+    
     let planPrice = parseInt(database.getSingleData('planPrice'))
-
 
     const totalPrice = addonArr.reduce((sum, item) => {
       
-
       if (typeof(item.price) == "string"){
 
         let str = item.price;
@@ -453,27 +452,12 @@ const selectPro = () => {
     console.log(addonArr)
     console.log(totalPrice)
     console.log(`total = ${totalPrice + planPrice}`)
+
+    totalWrapper.innerHTML = `
+      <p class="text-slate-400">Total (${planPriceUnit === 'yr' ? 'per year' : 'per month'})</p>
+      <p class="font-bold text-blue-500">+$${totalPrice + planPrice}/${planPriceUnit === 'yr' ? 'yr' : 'mo'}</p>
+    `
     
   }
  
-          // console.log(addonArr);
-
-          // const index = addonArr.findIndex(item => item.name === addonNames);
-          
-          // for (let i = 0; i < addonArr.length; i++) {
-          //   const element = addonArr[i];
-          //   console.log(element)
-          //   if(element.name !== addonNames){
-          //     console.log("ur papa")
-          //   }
-            
- // const taa = () => {
-            // const element = document.getElementById("taa");
-            // const element = database.renderAddonItems()
-            // if (element !== null) {
-            //   element.innerHTML = "New content";
-            // } else {
-            //   console.log("Element not found.");
-            // }
-  
-          // }
+ 

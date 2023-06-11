@@ -49,7 +49,7 @@ class UI {
       <div class="block md:flex md:gap-4">
       <label for="arcade" class="block mt-3 md:w-full " id="arcadePlan">
         <input type="radio" id="arcade" class="hidden peer plans" name="plan" checked>
-        <div class="grid grid-cols-4 p-3 border-2 rounded-lg text-MarineBlue border-slate-300 md:flex-col md:justify-center md:flex md:items-startlabel 
+        <div class="grid grid-cols-4 p-3 border-2 rounded-lg text-MarineBlue border-slate-300 md:flex-col md:justify-center md:flex md:items-start label 
         peer-checked:border-MarineBlue peer-checked:bg-Magnolia">
           <img src="assets/images/icon-arcade.svg" alt="arcade icon" class="w-12 my-auto">
           <div class="col-span-3 md:mt-8">
@@ -63,7 +63,7 @@ class UI {
           </div>
         </div>
       </label>
-      <label for="advanced" class="block mt-3 md:w-full " id="advancePlan">
+      <label for="advanced" class="block mt-3 md:w-full" id="advancePlan">
         <input type="radio" id="advanced" class="hidden peer plans" name="plan">
           <div class="grid grid-cols-4 p-3 border-2 rounded-lg text-MarineBlue focus:outline-MarineBlue border-slate-300 md:flex-col md:justify-center md:items-start md:flex label 
         peer-checked:border-MarineBlue peer-checked:bg-Magnolia 
@@ -124,8 +124,6 @@ class UI {
     <p class="mt-3 mb-4 text-sm text-slate-400 md:text-xl">Add-ons help enhance your gaming experience.</p>
     <form action="#">
       <label for="service_inp" class="block mb-3" id="service_label">
-        <!-- <label for="pick"> -->
-          <!-- <input type="checkbox" class="peer" id="pick" name="pick_check"> -->
           <div class="flex items-center justify-between px-3 py-1 align-middle border-2 rounded-lg gap-x-3 peer-checked:border-MarineBlue focus:border-MarineBlue md:flex md:px-4 md:py-2 ">
             <div class="flex gap-x-4">
               <input type="checkbox"  class="peer-checked:checked addonCheck" id="service_inp">
@@ -136,11 +134,8 @@ class UI {
             </div>
             <p id="addOns-price_1" class="text-sm text-indigo-400 addonPrice"> +$<span class="addonMonthYearDigit1">1</span>/<span class="addonMonthYearUnit">mo</span></p>
           </div>
-        <!-- </label> -->
       </label>
       <label for="storage_inp" class="block mb-3" id="storage_label">
-        <!-- <label for="pick"> -->
-          <!-- <input type="checkbox" class="peer" id="pick" name="pick_check"> -->
           <div class="flex items-center justify-between px-3 py-1 align-middle border-2 rounded-lg gap-x-3 peer-checked:border-MarineBlue focus:border-MarineBlue md:flex md:px-4 md:py-2 ">
             <div class="flex gap-x-4">
               <input type="checkbox"  class="peer-checked:checked addonCheck" id="storage_inp">
@@ -151,11 +146,8 @@ class UI {
             </div>
             <p id="addOns-price_1" class="text-sm text-indigo-400 addonPrice"> +$<span class="addonMonthYearDigit2">2</span>/<span class="addonMonthYearUnit">mo</span></p>
           </div>
-        <!-- </label> -->
       </label>
         <label for="customizable_inp" class="block" id="customizable_label">
-        <!-- <label for="pick"> -->
-          <!-- <input type="checkbox" class="peer" id="pick" name="pick_check"> -->
           <div class="flex items-center justify-between px-3 py-1 align-middle border-2 rounded-lg gap-x-3 peer-checked:border-MarineBlue focus:border-MarineBlue md:flex md:px-4 md:py-2 ">
             <div class="flex gap-x-4">
               <input type="checkbox"  class=" peer-checked:checked addonCheck" id="customizable_inp">
@@ -166,7 +158,6 @@ class UI {
             </div>
             <p id="addOns-price_1" class="text-sm text-indigo-400 addonPrice"> +$<span class="addonMonthYearDigit3">2</span>/<span class="addonMonthYearUnit">mo</span></p>
           </div>
-        <!-- </label> -->
       </label>
        <footer class="fixed inset-x-0 bottom-0 flex justify-between px-4 py-3 align-middle bg-white md:relative md:bottom-0 md:mt-40 shadow-myShadow md:shadow-none md:-mb-8 "  >
         <button class="px-3 py-2 text-md text-slate-500 md:px-4 md:py-2 md:text-xl back_btn" id="">Go Back</button>
@@ -186,17 +177,16 @@ class UI {
         <div class="flex items-center justify-between pb-3 border-b-2 border-slate-200">
           <div class="leading-none">
             <h3>${norm.planTitle} <span id="monthYear">(Monthly)</span></h3>
-            <a href="#" class="font-thin underline text-slate-400">change</a>
+            <a href="#" class="font-thin underline text-slate-400"></a>
           </div>
           <p>$${norm.planPrice}/${norm.planPriceUnit}</p>
         </div>
       <div id="section">
-       <p id="taa"></p>
+      
       </div>
       </div>
-    <div class="flex items-center justify-between px-4 mt-6">
-      <p class="text-slate-400">Total (per month)</p>
-      <p class="font-bold text-blue-500">+$12/mo</p>
+    <div class="flex items-center justify-between px-4 mt-6 totalWrapper">
+
     </div>
     <footer class="fixed inset-x-0 bottom-0 flex justify-between px-4 py-3 align-middle bg-white md:relative md:bottom-0 md:mt-[11.5rem] shadow-myShadow md:shadow-none md:-mb-8"  >
       <button class="px-3 py-2 text-md text-slate-500 md:px-4 md:py-2 md:text-xl back_btn" id="">Go Back</button>
@@ -222,11 +212,7 @@ class UI {
     `;
   }
 
-  // renderSectionItems(){
-  //   this.section.innerHTML = `fsfdg`
-    
-  // }
-
+ 
 }
     //   <div class="flex items-center justify-between mt-2">
           // <p class="text-slate-400">${norm.addonName}</p>
@@ -265,3 +251,6 @@ class UI {
         // addonMonthYearDigit1.innerText = '1'
         // addonMonthYearDigit2.innerText = '2'
         // addonMonthYearDigit3.innerText = '2'
+
+        // <p class="text-slate-400">Total (per month)</p>
+        // <p class="font-bold text-blue-500">+$12/mo</p>
