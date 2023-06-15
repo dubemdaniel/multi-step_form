@@ -58,7 +58,7 @@ window.onload = () => {
     }
 
     if(currentPage === 4){
-      console.log(database?.getData());
+      // console.log(database?.getData());
       Summary()
       
     }
@@ -78,14 +78,14 @@ window.onload = () => {
       console.log("hello");
       currentPage++;
       currentCirle++;
-      syncUI(currentPage, currentCirle);
+      syncUI(currentPage);
       return;
     }
 
     if (currentPage > 1) {
       currentPage++;
       currentCirle++;
-      syncUI(currentPage, currentCirle);
+      syncUI(currentPage);
     }
 
     // first we increase the current page
@@ -99,7 +99,7 @@ window.onload = () => {
 
     currentCirle--;
 
-    syncUI(currentPage, currentCirle);
+    syncUI(currentPage);
   };
 
   nextButton.addEventListener("click", nextPage);
